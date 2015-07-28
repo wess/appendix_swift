@@ -7,28 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A98A00011B418C990070711D /* Appendix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98AFFF51B418C990070711D /* Appendix.framework */; };
-		A98A00081B418C990070711D /* AppendixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00071B418C990070711D /* AppendixTests.swift */; };
+		A91C97A71B57FFF400297E53 /* NSURL+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */; };
+		A98A00141B418D540070711D /* UIColor+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00131B418D540070711D /* UIColor+Appendix.swift */; };
+		A98A00161B418D810070711D /* UIView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00151B418D810070711D /* UIView+Appendix.swift */; };
+		A98A00181B418DA20070711D /* String+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00171B418DA20070711D /* String+Appendix.swift */; };
+		A98A001A1B418DBD0070711D /* Date+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00191B418DBD0070711D /* Date+Appendix.swift */; };
+		A98A001C1B418DF60070711D /* Array+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A001B1B418DF60070711D /* Array+Appendix.swift */; };
+		A98A001F1B418E570070711D /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A001E1B418E570070711D /* Dispatch.swift */; };
 		A98AFFFB1B418C990070711D /* Appendix.h in Headers */ = {isa = PBXBuildFile; fileRef = A98AFFFA1B418C990070711D /* Appendix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9A0A44D1B57F89200027B64 /* NSNumberFormatter+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0A44C1B57F89200027B64 /* NSNumberFormatter+Appendix.swift */; };
+		A9C691E31B67CA5200307F4B /* Dictionary+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691E21B67CA5200307F4B /* Dictionary+Appendix.swift */; };
+		A9C691E61B67E45000307F4B /* UIImage+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691E51B67E45000307F4B /* UIImage+Appendix.swift */; };
+		A9C691E81B67E63900307F4B /* UILabel+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691E71B67E63900307F4B /* UILabel+Appendix.swift */; };
+		A9C691EA1B67E7A400307F4B /* UIFont+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */; };
+		A9C691EC1B67E84500307F4B /* UITableView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */; };
+		A9C748CB1B42D72E0015884D /* UITextView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748CA1B42D72E0015884D /* UITextView+Appendix.swift */; };
+		A9C748CD1B42D9E20015884D /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748CC1B42D9E20015884D /* functions.swift */; };
+		A9C748D11B42E3090015884D /* UINavigationController+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748D01B42E3090015884D /* UINavigationController+Appendix.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A98A00021B418C990070711D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A98AFFEC1B418C990070711D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A98AFFF41B418C990070711D;
-			remoteInfo = Appendix;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		A98A00001B418C990070711D /* AppendixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppendixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A98A00061B418C990070711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A98A00071B418C990070711D /* AppendixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendixTests.swift; sourceTree = "<group>"; };
+		A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Appendix.swift"; sourceTree = "<group>"; };
+		A98A00131B418D540070711D /* UIColor+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Appendix.swift"; sourceTree = "<group>"; };
+		A98A00151B418D810070711D /* UIView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Appendix.swift"; sourceTree = "<group>"; };
+		A98A00171B418DA20070711D /* String+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Appendix.swift"; sourceTree = "<group>"; };
+		A98A00191B418DBD0070711D /* Date+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Appendix.swift"; sourceTree = "<group>"; };
+		A98A001B1B418DF60070711D /* Array+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Appendix.swift"; sourceTree = "<group>"; };
+		A98A001E1B418E570070711D /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		A98AFFF51B418C990070711D /* Appendix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Appendix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98AFFF91B418C990070711D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A98AFFFA1B418C990070711D /* Appendix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appendix.h; sourceTree = "<group>"; };
+		A9A0A44C1B57F89200027B64 /* NSNumberFormatter+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumberFormatter+Appendix.swift"; sourceTree = "<group>"; };
+		A9C691E21B67CA5200307F4B /* Dictionary+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Appendix.swift"; sourceTree = "<group>"; };
+		A9C691E51B67E45000307F4B /* UIImage+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Appendix.swift"; sourceTree = "<group>"; };
+		A9C691E71B67E63900307F4B /* UILabel+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Appendix.swift"; sourceTree = "<group>"; };
+		A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Appendix.swift"; sourceTree = "<group>"; };
+		A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Appendix.swift"; sourceTree = "<group>"; };
+		A9C748CA1B42D72E0015884D /* UITextView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Appendix.swift"; sourceTree = "<group>"; };
+		A9C748CC1B42D9E20015884D /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		A9C748D01B42E3090015884D /* UINavigationController+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Appendix.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,39 +56,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A98AFFFD1B418C990070711D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A98A00011B418C990070711D /* Appendix.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A98A00041B418C990070711D /* AppendixTests */ = {
+		A98A00111B418CAF0070711D /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A98A00071B418C990070711D /* AppendixTests.swift */,
-				A98A00051B418C990070711D /* Supporting Files */,
+				A98A00171B418DA20070711D /* String+Appendix.swift */,
+				A98A00191B418DBD0070711D /* Date+Appendix.swift */,
+				A98A001B1B418DF60070711D /* Array+Appendix.swift */,
+				A9A0A44C1B57F89200027B64 /* NSNumberFormatter+Appendix.swift */,
+				A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */,
+				A9C691E21B67CA5200307F4B /* Dictionary+Appendix.swift */,
 			);
-			path = AppendixTests;
+			name = Foundation;
 			sourceTree = "<group>";
 		};
-		A98A00051B418C990070711D /* Supporting Files */ = {
+		A98A00121B418CB20070711D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A98A00061B418C990070711D /* Info.plist */,
+				A98A00131B418D540070711D /* UIColor+Appendix.swift */,
+				A98A00151B418D810070711D /* UIView+Appendix.swift */,
+				A9C748CA1B42D72E0015884D /* UITextView+Appendix.swift */,
+				A9C748D01B42E3090015884D /* UINavigationController+Appendix.swift */,
+				A9C691E51B67E45000307F4B /* UIImage+Appendix.swift */,
+				A9C691E71B67E63900307F4B /* UILabel+Appendix.swift */,
+				A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */,
+				A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */,
 			);
-			name = "Supporting Files";
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		A98A001D1B418E370070711D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A98A001E1B418E570070711D /* Dispatch.swift */,
+				A9C748CC1B42D9E20015884D /* functions.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		A98AFFEB1B418C990070711D = {
 			isa = PBXGroup;
 			children = (
 				A98AFFF71B418C990070711D /* Appendix */,
-				A98A00041B418C990070711D /* AppendixTests */,
 				A98AFFF61B418C990070711D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				A98AFFF51B418C990070711D /* Appendix.framework */,
-				A98A00001B418C990070711D /* AppendixTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +115,9 @@
 		A98AFFF71B418C990070711D /* Appendix */ = {
 			isa = PBXGroup;
 			children = (
+				A98A001D1B418E370070711D /* Utility */,
+				A98A00121B418CB20070711D /* UIKit */,
+				A98A00111B418CAF0070711D /* Foundation */,
 				A98AFFFA1B418C990070711D /* Appendix.h */,
 				A98AFFF81B418C990070711D /* Supporting Files */,
 			);
@@ -134,37 +164,18 @@
 			productReference = A98AFFF51B418C990070711D /* Appendix.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A98AFFFF1B418C990070711D /* AppendixTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A98A000E1B418C990070711D /* Build configuration list for PBXNativeTarget "AppendixTests" */;
-			buildPhases = (
-				A98AFFFC1B418C990070711D /* Sources */,
-				A98AFFFD1B418C990070711D /* Frameworks */,
-				A98AFFFE1B418C990070711D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A98A00031B418C990070711D /* PBXTargetDependency */,
-			);
-			name = AppendixTests;
-			productName = AppendixTests;
-			productReference = A98A00001B418C990070711D /* AppendixTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A98AFFEC1B418C990070711D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Wess Cope";
 				TargetAttributes = {
 					A98AFFF41B418C990070711D = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
-					A98AFFFF1B418C990070711D = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
@@ -182,20 +193,12 @@
 			projectRoot = "";
 			targets = (
 				A98AFFF41B418C990070711D /* Appendix */,
-				A98AFFFF1B418C990070711D /* AppendixTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A98AFFF31B418C990070711D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A98AFFFE1B418C990070711D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,26 +212,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A98AFFFC1B418C990070711D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A98A00081B418C990070711D /* AppendixTests.swift in Sources */,
+				A98A001A1B418DBD0070711D /* Date+Appendix.swift in Sources */,
+				A9A0A44D1B57F89200027B64 /* NSNumberFormatter+Appendix.swift in Sources */,
+				A98A00141B418D540070711D /* UIColor+Appendix.swift in Sources */,
+				A9C691EA1B67E7A400307F4B /* UIFont+Appendix.swift in Sources */,
+				A9C691E61B67E45000307F4B /* UIImage+Appendix.swift in Sources */,
+				A9C748CB1B42D72E0015884D /* UITextView+Appendix.swift in Sources */,
+				A9C748CD1B42D9E20015884D /* functions.swift in Sources */,
+				A98A001C1B418DF60070711D /* Array+Appendix.swift in Sources */,
+				A9C691E31B67CA5200307F4B /* Dictionary+Appendix.swift in Sources */,
+				A98A001F1B418E570070711D /* Dispatch.swift in Sources */,
+				A9C691EC1B67E84500307F4B /* UITableView+Appendix.swift in Sources */,
+				A9C691E81B67E63900307F4B /* UILabel+Appendix.swift in Sources */,
+				A98A00181B418DA20070711D /* String+Appendix.swift in Sources */,
+				A9C748D11B42E3090015884D /* UINavigationController+Appendix.swift in Sources */,
+				A98A00161B418D810070711D /* UIView+Appendix.swift in Sources */,
+				A91C97A71B57FFF400297E53 /* NSURL+Appendix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A98A00031B418C990070711D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A98AFFF41B418C990070711D /* Appendix */;
-			targetProxy = A98A00021B418C990070711D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A98A00091B418C990070711D /* Debug */ = {
@@ -253,6 +256,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -323,6 +327,7 @@
 		A98A000C1B418C990070711D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -330,14 +335,17 @@
 				INFOPLIST_FILE = Appendix/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesscope.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A98A000D1B418C990070711D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -345,38 +353,9 @@
 				INFOPLIST_FILE = Appendix/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wesscope.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A98A000F1B418C990070711D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AppendixTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		A98A00101B418C990070711D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AppendixTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -390,14 +369,7 @@
 				A98A000D1B418C990070711D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		A98A000E1B418C990070711D /* Build configuration list for PBXNativeTarget "AppendixTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A98A000F1B418C990070711D /* Debug */,
-				A98A00101B418C990070711D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A98AFFEF1B418C990070711D /* Build configuration list for PBXProject "Appendix" */ = {
 			isa = XCConfigurationList;
