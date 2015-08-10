@@ -22,11 +22,11 @@
 		A9C691EA1B67E7A400307F4B /* UIFont+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */; };
 		A9C691EC1B67E84500307F4B /* UITableView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */; };
 		A9C748CB1B42D72E0015884D /* UITextView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748CA1B42D72E0015884D /* UITextView+Appendix.swift */; };
-		A9C748CD1B42D9E20015884D /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748CC1B42D9E20015884D /* functions.swift */; };
 		A9C748D11B42E3090015884D /* UINavigationController+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C748D01B42E3090015884D /* UINavigationController+Appendix.swift */; };
 		A9CEC0D41B78F6510094473E /* CGRect+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC0D31B78F6510094473E /* CGRect+Appendix.swift */; };
 		A9CEC0D61B78FB740094473E /* CGAffineTransform+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC0D51B78FB740094473E /* CGAffineTransform+Appendix.swift */; };
 		A9CEC0D81B78FF390094473E /* Int+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CEC0D71B78FF390094473E /* Int+Appendix.swift */; };
+		A9F7C5F81B79052200D4C19B /* Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7C5F71B79052200D4C19B /* Appendix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,11 +47,11 @@
 		A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Appendix.swift"; sourceTree = "<group>"; };
 		A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Appendix.swift"; sourceTree = "<group>"; };
 		A9C748CA1B42D72E0015884D /* UITextView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Appendix.swift"; sourceTree = "<group>"; };
-		A9C748CC1B42D9E20015884D /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		A9C748D01B42E3090015884D /* UINavigationController+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Appendix.swift"; sourceTree = "<group>"; };
 		A9CEC0D31B78F6510094473E /* CGRect+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Appendix.swift"; sourceTree = "<group>"; };
 		A9CEC0D51B78FB740094473E /* CGAffineTransform+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Appendix.swift"; sourceTree = "<group>"; };
 		A9CEC0D71B78FF390094473E /* Int+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Appendix.swift"; sourceTree = "<group>"; };
+		A9F7C5F71B79052200D4C19B /* Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appendix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,6 @@
 				A9A0A44C1B57F89200027B64 /* NSNumberFormatter+Appendix.swift */,
 				A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */,
 				A9C691E21B67CA5200307F4B /* Dictionary+Appendix.swift */,
-				A9CEC0D31B78F6510094473E /* CGRect+Appendix.swift */,
 				A9CEC0D71B78FF390094473E /* Int+Appendix.swift */,
 			);
 			name = Foundation;
@@ -91,6 +90,7 @@
 				A9C691E71B67E63900307F4B /* UILabel+Appendix.swift */,
 				A9C691E91B67E7A400307F4B /* UIFont+Appendix.swift */,
 				A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */,
+				A9CEC0D31B78F6510094473E /* CGRect+Appendix.swift */,
 				A9CEC0D51B78FB740094473E /* CGAffineTransform+Appendix.swift */,
 			);
 			name = UIKit;
@@ -100,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				A98A001E1B418E570070711D /* Dispatch.swift */,
-				A9C748CC1B42D9E20015884D /* functions.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -124,6 +123,7 @@
 		A98AFFF71B418C990070711D /* Appendix */ = {
 			isa = PBXGroup;
 			children = (
+				A9F7C5F71B79052200D4C19B /* Appendix.swift */,
 				A98A001D1B418E370070711D /* Utility */,
 				A98A00121B418CB20070711D /* UIKit */,
 				A98A00111B418CAF0070711D /* Foundation */,
@@ -227,13 +227,13 @@
 				A9C691EA1B67E7A400307F4B /* UIFont+Appendix.swift in Sources */,
 				A9C691E61B67E45000307F4B /* UIImage+Appendix.swift in Sources */,
 				A9C748CB1B42D72E0015884D /* UITextView+Appendix.swift in Sources */,
-				A9C748CD1B42D9E20015884D /* functions.swift in Sources */,
 				A98A001C1B418DF60070711D /* Array+Appendix.swift in Sources */,
 				A9C691E31B67CA5200307F4B /* Dictionary+Appendix.swift in Sources */,
 				A98A001F1B418E570070711D /* Dispatch.swift in Sources */,
 				A9C691EC1B67E84500307F4B /* UITableView+Appendix.swift in Sources */,
 				A9CEC0D41B78F6510094473E /* CGRect+Appendix.swift in Sources */,
 				A9C691E81B67E63900307F4B /* UILabel+Appendix.swift in Sources */,
+				A9F7C5F81B79052200D4C19B /* Appendix.swift in Sources */,
 				A98A00181B418DA20070711D /* String+Appendix.swift in Sources */,
 				A9CEC0D61B78FB740094473E /* CGAffineTransform+Appendix.swift in Sources */,
 				A9C748D11B42E3090015884D /* UINavigationController+Appendix.swift in Sources */,
