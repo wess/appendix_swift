@@ -39,14 +39,14 @@ internal extension String {
     }
 
     subscript(index: Int) -> Character {
-        let index = advance(startIndex, index)
+        let index = startIndex.advancedBy(index)
         
         return self[index]
     }
     
     subscript(range: Range<Int>) -> String {
-        let start       = advance(startIndex, range.startIndex)
-        let end         = advance(startIndex, range.endIndex)
+        let start       = startIndex.advancedBy(range.startIndex)
+        let end         = startIndex.advancedBy(range.endIndex)
         let subrange    = start ..< end
         
         return self[subrange]

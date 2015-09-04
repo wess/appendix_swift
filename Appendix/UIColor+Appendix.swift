@@ -14,22 +14,22 @@ extension UIColor {
         var hex = hexString
         
         if hex.hasPrefix("#") {
-            hex = hex.substringFromIndex(advance(hex.startIndex, 1))
+            hex = hex.substringFromIndex(hex.startIndex.advancedBy(1))
         }
         
         assert(hex.characters.count == 6 || hex.characters.count == 3)
         
         if hex.characters.count == 3 {
-            let red   = hex.substringToIndex(advance(hex.startIndex, 1))
-            let green = hex.substringWithRange(Range<String.Index>(start: advance(hex.startIndex, 1), end: advance(hex.startIndex, 2)))
-            let blue  = hex.substringFromIndex(advance(hex.startIndex, 2))
+            let red   = hex.substringToIndex(hex.startIndex.advancedBy(1))
+            let green = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(1), end: hex.startIndex.advancedBy(2)))
+            let blue  = hex.substringFromIndex(hex.startIndex.advancedBy(2))
             
             hex = red + red + green + green + blue + blue
         }
         
-        let red      = hex.substringToIndex(advance(hex.startIndex, 2))
-        let green    = hex.substringWithRange(Range<String.Index>(start: advance(hex.startIndex, 2), end: advance(hex.startIndex, 4)))
-        let blue     = hex.substringWithRange(Range<String.Index>(start: advance(hex.startIndex, 4), end: advance(hex.startIndex, 6)))
+        let red      = hex.substringToIndex(hex.startIndex.advancedBy(2))
+        let green    = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(2), end: hex.startIndex.advancedBy(4)))
+        let blue     = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(4), end: hex.startIndex.advancedBy(6)))
         
         var redInt:   CUnsignedInt = 0
         var greenInt: CUnsignedInt = 0

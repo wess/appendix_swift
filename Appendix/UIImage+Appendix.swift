@@ -13,7 +13,7 @@ import ImageIO
 internal extension UIImage {
     func fill(color:UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        let rect = CGRect(origin: .zeroPoint, size: size)
+        let rect = CGRect(origin: .zero, size: size)
         
         color.set()
         UIRectFill(rect)

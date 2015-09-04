@@ -11,12 +11,12 @@ import Foundation
 internal extension UILabel {
     
     func suggestedSize(width:Float) -> CGSize {
-        return CGSize.zeroSize
+        return CGSize.zero
     }
     
     func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
         if string.length < 1 {
-            return .zeroSize
+            return .zero
         }
         
         return self.font.sizeOfString(string.string, constrainedToWidth: Double(width))

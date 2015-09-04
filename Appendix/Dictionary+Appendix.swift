@@ -64,7 +64,7 @@ internal extension Dictionary {
             qry.append("\(key)=\(val)")
         }
         
-        return "&".join(qry)
+        return qry.joinWithSeparator("&")
     }
     
     func each(handler:(key:Key, value:Value) -> ()) {
