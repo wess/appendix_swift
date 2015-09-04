@@ -120,6 +120,10 @@ internal extension String {
     func format(pattern:String, maskCharacter character:String, placeholder:String) -> String {
         return formatString(self, pattern: pattern, maskCharacter: character, placeholder: placeholder)
     }
+    
+    func contains(string:String) -> Bool {
+        return self.rangeOfString(string) != nil
+    }
 }
 
 
