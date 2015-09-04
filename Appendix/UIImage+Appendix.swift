@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import ImageIO
 
-internal extension UIImage {
-    func fill(color:UIColor) -> UIImage {
+public  extension UIImage {
+    public func fill(color:UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         let rect = CGRect(origin: .zero, size: size)
         
@@ -26,7 +26,7 @@ internal extension UIImage {
         return image
     }
     
-    func crop(to rect:CGRect) -> UIImage {
+    public func crop(to rect:CGRect) -> UIImage {
         let scaled  = CGRect(x: (rect.left * scale), y: (rect.top * scale), width: (rect.width * scale), height:(rect.height * scale))
         let ref     = CGImageCreateWithImageInRect(self.CGImage, scaled)!
 

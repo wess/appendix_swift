@@ -40,7 +40,7 @@ public struct DateIntervals {
     static var Year:Int    = 31556926
 }
 
-struct DateComponents {
+public struct DateComponents {
     static var Minute:NSCalendarUnit            = NSCalendarUnit.Minute
     static var Hour:NSCalendarUnit              = NSCalendarUnit.Hour
     static var Day:NSCalendarUnit               = NSCalendarUnit.Day
@@ -52,7 +52,7 @@ struct DateComponents {
 }
 
 public extension NSDate {
-    var components: NSDateComponents {
+    public var components: NSDateComponents {
         return NSCalendar.currentCalendar().components((DateComponents.All), fromDate: self)
     }
     
@@ -137,7 +137,7 @@ public extension NSDate {
         return date
     }
     
-    func isEqualToDateIgnoringTime(date: NSDate) -> Bool
+    public func isEqualToDateIgnoringTime(date: NSDate) -> Bool
     {
         let calendar = NSCalendar.currentCalendar()
         let comp1 = calendar.components(DateComponents.All, fromDate: self)
@@ -147,7 +147,7 @@ public extension NSDate {
     }
 }
 
-func / (date: NSDate, right: Int) -> NSDate {
+public func / (date: NSDate, right: Int) -> NSDate {
     let calendar    = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     let components  = calendar.components([DateComponents.Year, DateComponents.Month, DateComponents.Day], fromDate: date)
     
@@ -157,24 +157,24 @@ func / (date: NSDate, right: Int) -> NSDate {
 }
 
 
-func > (dateA: NSDate, dateB: NSDate) -> Bool {
+public func > (dateA: NSDate, dateB: NSDate) -> Bool {
     return dateA.compare(dateB) == NSComparisonResult.OrderedDescending
 }
 
-func < (dateA: NSDate, dateB: NSDate) -> Bool {
+public func < (dateA: NSDate, dateB: NSDate) -> Bool {
     return dateA.compare(dateB) == NSComparisonResult.OrderedAscending
 }
 
-func >= (dateA: NSDate, dateB: NSDate) -> Bool {
+public func >= (dateA: NSDate, dateB: NSDate) -> Bool {
     return dateA == dateB || dateA > dateB
 }
 
-func <= (dateA: NSDate, dateB: NSDate) -> Bool {
+public func <= (dateA: NSDate, dateB: NSDate) -> Bool {
     return dateA == dateB || dateA < dateB
 }
 
 
-func / (month: Int, right: Int) -> NSDate {
+public func / (month: Int, right: Int) -> NSDate {
     let calendar    = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     let components  = calendar.components([DateComponents.Year, DateComponents.Month, DateComponents.Day], fromDate: NSDate())
     

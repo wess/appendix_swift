@@ -8,8 +8,8 @@
 
 import Foundation
 
-internal extension UITableView {
-    func heightForCell(identifier:String, handler:((cell:AnyObject) -> Void)!) -> Float {
+public extension UITableView {
+    public func heightForCell(identifier:String, handler:((cell:AnyObject) -> Void)!) -> Float {
         var identifiers = [String:UITableViewCell]()
         var cell:UITableViewCell
 

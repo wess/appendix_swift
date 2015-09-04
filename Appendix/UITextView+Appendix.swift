@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension UITextView {
-    var visibleTextRange:NSRange {
+    public var visibleTextRange:NSRange {
         get {
             let bounds:CGRect   = self.bounds
             let text            = self.text
@@ -25,11 +25,11 @@ public extension UITextView {
         }
     }
     
-    func numberOfLines() -> Int {
+    public func numberOfLines() -> Int {
         return Int(self.contentSize.height / self.font!.lineHeight)
     }
     
-    func rangeOfTextAtPoint(point:CGPoint) -> NSRange {
+    public func rangeOfTextAtPoint(point:CGPoint) -> NSRange {
         let position    = self.closestPositionToPoint(point)
         let textRange   = self.tokenizer.rangeEnclosingPosition(position!, withGranularity: .Word, inDirection: 1)!
         let start       = self.offsetFromPosition(self.beginningOfDocument, toPosition: textRange.start)

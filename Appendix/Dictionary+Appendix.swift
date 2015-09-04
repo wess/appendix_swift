@@ -9,9 +9,9 @@
 import Foundation
 import Swift
 
-internal extension Dictionary {
+public extension Dictionary {
     
-    init(json string:String) {
+    public init(json string:String) {
         if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
             self = Dictionary(json: data)
         }
@@ -19,7 +19,7 @@ internal extension Dictionary {
         self = [:]
     }
     
-    init(json data:NSData) {
+    public init(json data:NSData) {
         do {
             self = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as! [Key:Value]
         }
@@ -30,7 +30,7 @@ internal extension Dictionary {
         self = [:]
     }
  
-    func jsonData() -> NSData? {
+    public func jsonData() -> NSData? {
         var cleanSelf:[String: AnyObject] = [:]
         
         for (key,val) in self {
@@ -47,7 +47,7 @@ internal extension Dictionary {
         }
     }
     
-    func jsonString() -> String? {
+    public func jsonString() -> String? {
         if let data = self.jsonData() {
             if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
                 return str
@@ -57,7 +57,7 @@ internal extension Dictionary {
         return nil
     }
     
-    func httpQueryString() -> String {
+    public func httpQueryString() -> String {
         var qry = [String]()
         
         for (key, val) in self {
@@ -67,13 +67,13 @@ internal extension Dictionary {
         return qry.joinWithSeparator("&")
     }
     
-    func each(handler:(key:Key, value:Value) -> ()) {
+    public func each(handler:(key:Key, value:Value) -> ()) {
         for(key, val) in self {
             handler(key: key, value: val)
         }
     }
     
-    func filter(handler:(key:Key, value:Value) -> Bool) -> Dictionary {
+    public func filter(handler:(key:Key, value:Value) -> Bool) -> Dictionary {
         var result = Dictionary()
         
         for(key, val) in self {
@@ -85,11 +85,11 @@ internal extension Dictionary {
         return result
     }
 
-    func has(key:Key) -> Bool {
+    public func has(key:Key) -> Bool {
         return indexForKey(key) != nil
     }
     
-    func difference<Val:Equatable>(collection:[Key:Val]...) -> [Key:Val] {
+    public func difference<Val:Equatable>(collection:[Key:Val]...) -> [Key:Val] {
         var result = [Key:Val]()
         
         each { k,v in

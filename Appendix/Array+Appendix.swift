@@ -9,8 +9,8 @@
 import Foundation
 import Swift
 
-internal extension Array {
-    subscript(arrayRange: Range<Int>) -> Array {
+public extension Array {
+    public subscript(arrayRange: Range<Int>) -> Array {
         let start = Swift.max(0, arrayRange.startIndex)
         let end = Swift.min(arrayRange.endIndex, count)
         
@@ -21,15 +21,15 @@ internal extension Array {
         return Array(self[Range(start: start, end: end)] as ArraySlice<Element>)
     }
     
-    subscript(interval: HalfOpenInterval<Int>) -> Array {
+    public subscript(interval: HalfOpenInterval<Int>) -> Array {
         return self[Range(start: interval.start, end: interval.end)]
     }
     
-    subscript(interval: ClosedInterval<Int>) -> Array {
+    public subscript(interval: ClosedInterval<Int>) -> Array {
         return self[Range(start: interval.start, end: interval.end + 1)]
     }
     
-    subscript(first: Int, second: Int, other: Int...) -> Array {
+    public subscript(first: Int, second: Int, other: Int...) -> Array {
         let indexes = [first, second] + other
         
         return indexes.map {
@@ -37,7 +37,7 @@ internal extension Array {
         }
     }
     
-    func at(index:Int) -> Element? {
+    public func at(index:Int) -> Element? {
         
         func relativePosition(index:Int) -> Int {
             let location = (index % count)
@@ -50,7 +50,7 @@ internal extension Array {
         return position < count ? self[position] : nil
     }
     
-    func indexOf (condition: Element -> Bool) -> Int? {
+    public func indexOf (condition: Element -> Bool) -> Int? {
         for (index, element) in self.enumerate() {
             if condition(element) {
                 return index
@@ -60,7 +60,7 @@ internal extension Array {
         return nil
     }
     
-    func indexOf <U: Equatable> (item: U) -> Int? {
+    public func indexOf <U: Equatable> (item: U) -> Int? {
         if item is Element {
             return unsafeBitCast(self, [U].self).indexOf(item)
         }
@@ -69,7 +69,7 @@ internal extension Array {
     }
     
     
-    func all (test: (Element) -> Bool) -> Bool {
+    public func all (test: (Element) -> Bool) -> Bool {
         for item in self {
             if !test(item) {
                 return false
@@ -79,11 +79,11 @@ internal extension Array {
         return true
     }
     
-    func contains<T:Equatable>(items: T...) -> Bool {
+    public func contains<T:Equatable>(items: T...) -> Bool {
         return items.all { self.indexOf($0) >= 0 }
     }
     
-    func difference<T: Equatable>(values: [T]...) -> [T] {
+    public func difference<T: Equatable>(values: [T]...) -> [T] {
         var result = [T]()
         
         elements: for element in self {
@@ -101,7 +101,7 @@ internal extension Array {
         return result
     }
     
-    func merge<U: Equatable>(values: [U]...) -> Array {
+    public func merge<U: Equatable>(values: [U]...) -> Array {
         var result = self
         
         for array in values {
@@ -115,13 +115,13 @@ internal extension Array {
         return result
     }
     
-    func each(handler:(index:Int, element:Element) -> ()) {
+    public func each(handler:(index:Int, element:Element) -> ()) {
         for (index, value) in enumerate() {
             handler(index: index, element: value)
         }
     }
     
-    func filter(handler:(Element) -> Bool) -> Array {
+    public func filter(handler:(Element) -> Bool) -> Array {
         var result = [Element]()
         
         for item in self {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension UINavigationController {
-    func pushViewController(controller:UIViewController, transition:UIViewAnimationTransition) {
+    public func pushViewController(controller:UIViewController, transition:UIViewAnimationTransition) {
         UIView.beginAnimations(nil, context: nil)
         
         self.pushViewController(controller, animated: false)
@@ -21,7 +21,7 @@ public extension UINavigationController {
         UIView.commitAnimations()
     }
 
-    func popViewControllerWithTransition(transition:UIViewAnimationTransition) -> UIViewController {
+    public func popViewControllerWithTransition(transition:UIViewAnimationTransition) -> UIViewController {
         UIView.beginAnimations(nil, context: nil)
         
         let controller:UIViewController = self.popViewControllerAnimated(false)!

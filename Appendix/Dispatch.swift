@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dispatch : NSObject {
+public class Dispatch : NSObject {
     /**
         Executes block on the background for provided queue.
     
@@ -16,7 +16,7 @@ class Dispatch : NSObject {
         :param: Block called on background queue.
         :param: Block called on main thread once background block is complete.
     */
-    class func executeOnQueue(queue: String, block:()->Void, callback: ()->Void) {
+    public class func executeOnQueue(queue: String, block:()->Void, callback: ()->Void) {
         let dispatchQueue = dispatch_queue_create(queue, DISPATCH_QUEUE_CONCURRENT)
         
         dispatch_async(dispatchQueue, { () -> Void in
@@ -32,7 +32,7 @@ class Dispatch : NSObject {
         :param: Name of queue
         :param: Block called on background queue.
     */
-    class func executeInBackground(block:()->Void, callback:()->Void) {
+    public class func executeInBackground(block:()->Void, callback:()->Void) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
             block()
             
@@ -46,7 +46,7 @@ class Dispatch : NSObject {
         :param: Period to wait before calling block.
         :param: Block called after period.
     */
-    class func executeAfterDelay(delay:NSTimeInterval, callback:()->Void) {
+    public class func executeAfterDelay(delay:NSTimeInterval, callback:()->Void) {
         let delta:int_fast64_t  = int_fast64_t(1.0e9 * delay)
         let popTime             = dispatch_time(DISPATCH_TIME_NOW, delta)
         let queue               = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)

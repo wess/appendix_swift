@@ -10,63 +10,63 @@ import Foundation
 
 
 
-extension CGPoint {
-    init(_ x: CGFloat, _ y: CGFloat) {
+public extension CGPoint {
+    public init(_ x: CGFloat, _ y: CGFloat) {
         self.x = x
         self.y = y
     }
     
-    func with(x x:CGFloat) -> CGPoint {
+    public func with(x x:CGFloat) -> CGPoint {
         return CGPoint(x: x, y: y)
     }
     
-    func with(y y:CGFloat) -> CGPoint {
+    public func with(y y:CGFloat) -> CGPoint {
         return CGPoint(x: x, y: y)
     }
 }
 
-extension CGRect {
-    var x:CGFloat {
+public extension CGRect {
+    public var x:CGFloat {
         get { return origin.x }
         set { origin.x = newValue }
     }
     
-    var y:CGFloat {
+    public var y:CGFloat {
         get { return origin.y }
         set { origin.y = newValue }
     }
 
-    var top:CGFloat {
+    public var top:CGFloat {
         get { return y }
         set { y = newValue }
     }
 
-    var right:CGFloat {
+    public var right:CGFloat {
         get { return x + width }
         set { x = newValue - width }
     }
     
-    var bottom:CGFloat {
+    public var bottom:CGFloat {
         get { return y + height }
         set { y = newValue - height }
     }
     
-    var left:CGFloat {
+    public var left:CGFloat {
         get { return x }
         set { x = newValue }
     }
     
-    var centerX:CGFloat {
+    public var centerX:CGFloat {
         get { return x + width * 0.5  }
         set { x = newValue - width * 0.5 }
     }
 
-    var centerY:CGFloat {
+    public var centerY:CGFloat {
         get { return y + width * 0.5 }
         set { y = newValue - width * 0.5 }
     }
     
-    var center:CGPoint {
+    public var center:CGPoint {
         get { return CGPoint(x, y) }
         set {
             centerX = newValue.x

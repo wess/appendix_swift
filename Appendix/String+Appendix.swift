@@ -31,20 +31,20 @@ public func formatString(string:String, pattern:String, maskCharacter character:
     return result as String
 }
 
-internal extension String {
+public extension String {
 
     
-    var length: Int {
+    public var length: Int {
         return self.characters.count
     }
 
-    subscript(index: Int) -> Character {
+    public subscript(index: Int) -> Character {
         let index = startIndex.advancedBy(index)
         
         return self[index]
     }
     
-    subscript(range: Range<Int>) -> String {
+    public subscript(range: Range<Int>) -> String {
         let start       = startIndex.advancedBy(range.startIndex)
         let end         = startIndex.advancedBy(range.endIndex)
         let subrange    = start ..< end
@@ -52,7 +52,7 @@ internal extension String {
         return self[subrange]
     }
     
-    subscript(index1: Int,  index2: Int) -> NSString {
+    public subscript(index1: Int,  index2: Int) -> NSString {
         
         let strSize         = self.characters.count
         var indexFirst:Int  = index1
@@ -78,21 +78,21 @@ internal extension String {
         return self[Range(start:indexFirst, end: indexLast)]
     }
 
-    func sizeConstraintedToWidth(width:CGFloat, font:UIFont) -> CGSize {
+    public func sizeConstraintedToWidth(width:CGFloat, font:UIFont) -> CGSize {
         let string  = NSString(string: self)
         let bounds  = string.boundingRectWithSize(CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSFontAttributeName: font], context: nil)
         
         return bounds.size
     }
 
-    func sizeConstraintedToSize(size:CGSize, font:UIFont) -> CGSize {
+    public func sizeConstraintedToSize(size:CGSize, font:UIFont) -> CGSize {
         let string  = NSString(string: self)
         let bounds  = string.boundingRectWithSize(size, options: [], attributes: [NSFontAttributeName: font], context: nil)
         
         return bounds.size
     }
 
-    func removeHTML() -> String {
+    public func removeHTML() -> String {
         var html            = self
         let scanner         = NSScanner(string: html)
         var text:NSString?  = ""
@@ -109,19 +109,19 @@ internal extension String {
         return html
     }
     
-    func format(pattern:String) -> String {
+    public func format(pattern:String) -> String {
         return formatString(self, pattern: pattern, maskCharacter: "#")
     }
     
-    func format(pattern:String, maskCharacter character:String) -> String {
+    public func format(pattern:String, maskCharacter character:String) -> String {
         return formatString(self, pattern: pattern, maskCharacter: character)
     }
     
-    func format(pattern:String, maskCharacter character:String, placeholder:String) -> String {
+    public func format(pattern:String, maskCharacter character:String, placeholder:String) -> String {
         return formatString(self, pattern: pattern, maskCharacter: character, placeholder: placeholder)
     }
     
-    func contains(string:String) -> Bool {
+    public func contains(string:String) -> Bool {
         return self.rangeOfString(string) != nil
     }
 }

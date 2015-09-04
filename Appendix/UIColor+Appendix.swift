@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-extension UIColor {
-    convenience init(hexString: String, alpha: Float) {
+public extension UIColor {
+    public convenience init(hexString: String, alpha: Float) {
         var hex = hexString
         
         if hex.hasPrefix("#") {
@@ -42,19 +42,19 @@ extension UIColor {
         self.init(red: CGFloat(redInt) / 255.0, green: CGFloat(greenInt) / 255.0, blue: CGFloat(blueInt) / 255.0, alpha: CGFloat(alpha))
     }
     
-    convenience init(hexString: String) {
+    public convenience init(hexString: String) {
         self.init(hexString: hexString, alpha:1)
     }
     
-    class func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor {
+    public class func RGBA(r: Int, g: Int, b: Int, a: Float) -> UIColor {
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(a))
     }
     
-    class func RGB(r: Int, g: Int, b: Int) -> UIColor {
+    public class func RGB(r: Int, g: Int, b: Int) -> UIColor {
         return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: 1.0)
     }
 
-    class func randomColor() -> UIColor {
+    public class func randomColor() -> UIColor {
         func randomVal() -> CGFloat {
             return CGFloat(random())/CGFloat(RAND_MAX)
         }
@@ -63,18 +63,18 @@ extension UIColor {
     }
     
 // MARK: - methods
-    func changeAlpha(to:CGFloat) -> UIColor {
+    public func changeAlpha(to:CGFloat) -> UIColor {
         return self.colorWithAlphaComponent(to)
     }
     
 // MARK: - Getters
-    var colorSpaceModel:CGColorSpaceModel {
+    public var colorSpaceModel:CGColorSpaceModel {
         get {
             return CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor))
         }
     }
 
-    var usesMonochromeColorSpace:Bool {
+    public var usesMonochromeColorSpace:Bool {
         get {
             return self.colorSpaceModel.rawValue == CGColorSpaceModel.Monochrome.rawValue
         }
@@ -86,7 +86,7 @@ extension UIColor {
         }
     }
     
-    var canProvideRGBComponents:Bool {
+    public var canProvideRGBComponents:Bool {
         get {
             switch self.colorSpaceModel.rawValue {
             case CGColorSpaceModel.RGB.rawValue:
@@ -101,7 +101,7 @@ extension UIColor {
         }
     }
     
-    var red:CGFloat {
+    public var red:CGFloat {
         get {
             assert(self.canProvideRGBComponents, "Must be an RGB color to use .red")
             
@@ -124,7 +124,7 @@ extension UIColor {
         }
     }
 
-    var green:CGFloat {
+    public var green:CGFloat {
         get {
             assert(self.canProvideRGBComponents, "Must be an RGB color to use .green")
             
@@ -147,7 +147,7 @@ extension UIColor {
         }
     }
 
-    var blue:CGFloat {
+    public var blue:CGFloat {
         get {
             assert(self.canProvideRGBComponents, "Must be an RGB color to use .green")
             
@@ -170,7 +170,7 @@ extension UIColor {
         }
     }
     
-    var white:CGFloat {
+    public var white:CGFloat {
         get {
             assert(self.canProvideRGBComponents, "Must be an RGB color to use .green")
             
@@ -182,7 +182,7 @@ extension UIColor {
         }
     }
     
-    var alpha:CGFloat {
+    public var alpha:CGFloat {
         get {
             var alpha:CGFloat = 0
             

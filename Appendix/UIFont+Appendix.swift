@@ -8,8 +8,8 @@
 
 import Foundation
 
-internal extension UIFont {
-    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+public extension UIFont {
+    public func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
         return (string as NSString).boundingRectWithSize(CGSize(width: width, height: DBL_MAX),
             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
             attributes: [NSFontAttributeName: self],

@@ -9,13 +9,9 @@
 import Foundation
 
 public extension NSURL {
-    func append(queryString: String = "") -> NSURL {
+    public func append(queryString: String = "") -> NSURL {
         let urlString = self.absoluteString + "?\(queryString)"
         
         return NSURL(string: urlString)!
     }
-    
-//    func append(parameters: Dictionary) -> NSURL {
-//        
-//    }
 }

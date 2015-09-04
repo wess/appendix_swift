@@ -8,13 +8,13 @@
 
 import Foundation
 
-internal extension UILabel {
+public extension UILabel {
     
-    func suggestedSize(width:Float) -> CGSize {
+    public func suggestedSize(width:Float) -> CGSize {
         return CGSize.zero
     }
     
-    func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
+    public func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
         if string.length < 1 {
             return .zero
         }
@@ -22,7 +22,7 @@ internal extension UILabel {
         return self.font.sizeOfString(string.string, constrainedToWidth: Double(width))
     }
     
-    func suggestedSize(string:String, width:Float) -> CGSize {
+    public func suggestedSize(string:String, width:Float) -> CGSize {
         return suggestedSize(attributedString: NSAttributedString(string: string), width: width)
     }
 }

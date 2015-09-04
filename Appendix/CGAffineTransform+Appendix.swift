@@ -17,7 +17,7 @@ public func +(left:CGAffineTransform, right:CGAffineTransform) -> CGAffineTransf
     return left.concat(right)
 }
 
-extension CGAffineTransform {
+public extension CGAffineTransform {
     var isIdentity:Bool { return CGAffineTransformIsIdentity(self) }
     
     public init(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) {
