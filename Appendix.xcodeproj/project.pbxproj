@@ -123,11 +123,11 @@
 		A98AFFF71B418C990070711D /* Appendix */ = {
 			isa = PBXGroup;
 			children = (
+				A98AFFFA1B418C990070711D /* Appendix.h */,
 				A9F7C5F71B79052200D4C19B /* Appendix.swift */,
 				A98A001D1B418E370070711D /* Utility */,
 				A98A00121B418CB20070711D /* UIKit */,
 				A98A00111B418CAF0070711D /* Foundation */,
-				A98AFFFA1B418C990070711D /* Appendix.h */,
 				A98AFFF81B418C990070711D /* Supporting Files */,
 			);
 			path = Appendix;
