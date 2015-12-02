@@ -10,33 +10,6 @@ import Foundation
 import Swift
 
 public extension Array {
-    public subscript(arrayRange: Range<Int>) -> Array {
-        let start = Swift.max(0, arrayRange.startIndex)
-        let end = Swift.min(arrayRange.endIndex, count)
-        
-        if start > end {
-            return []
-        }
-        
-        return Array(self[Range(start: start, end: end)] as ArraySlice<Element>)
-    }
-    
-    public subscript(interval: HalfOpenInterval<Int>) -> Array {
-        return self[Range(start: interval.start, end: interval.end)]
-    }
-    
-    public subscript(interval: ClosedInterval<Int>) -> Array {
-        return self[Range(start: interval.start, end: interval.end + 1)]
-    }
-    
-    public subscript(first: Int, second: Int, other: Int...) -> Array {
-        let indexes = [first, second] + other
-        
-        return indexes.map {
-            self[$0]
-        }
-    }
-    
     public func at(index:Int) -> Element? {
         
         func relativePosition(index:Int) -> Int {
