@@ -8,32 +8,60 @@
 
 import Foundation
 
+public enum AppendixNumberFormatterType {
+    case Currency
+    case Percent
+    case None
+}
+
 public extension NSNumberFormatter {
     public class func currencyFormatter() -> NSNumberFormatter {
-        return NSNumberFormatter.currencyFormatter(forLocal: NSLocale.currentLocale())
+        let formatter       = NSNumberFormatter()
+        formatter.locale    = NSLocale.currentLocale()
+
+        return formatter
+
     }
     
     public class func currencyFormatter(forLocal locale: NSLocale) -> NSNumberFormatter {
-        return NSNumberFormatter(locale: locale, style: .CurrencyStyle)
+        let formatter       = NSNumberFormatter()
+        formatter.locale    = locale
+        
+        return formatter
     }
     
     public class func percentFormatter() -> NSNumberFormatter {
-        return NSNumberFormatter.percentFormatter(forLocal: NSLocale.currentLocale())
+        let formatter = NSNumberFormatter.percentFormatter(forLocal: NSLocale.currentLocale())
+
+        return formatter
     }
     
     public class func percentFormatter(forLocal locale: NSLocale) -> NSNumberFormatter {
-        return NSNumberFormatter(locale: locale, style: .PercentStyle)
-    }
-    
-    public convenience init(locale: NSLocale, style: NSNumberFormatterStyle = .NoStyle) {
-        self.init(locale: locale)
-
-        self.numberStyle  = style
+        let formatter           = NSNumberFormatter()
+        formatter.locale        = locale
+        formatter.numberStyle   = .PercentStyle
+        
+        return formatter
     }
 
-    public convenience init(style: NSNumberFormatterStyle = .NoStyle) {
-        self.init(locale: NSLocale.currentLocale())
+    public convenience init(locale:NSLocale?, type:AppendixNumberFormatterType = .None) {
+        self.init()
 
-        self.numberStyle = style
+        self.locale = locale ?? NSLocale.currentLocale()
+        
+        switch type {
+        case .Currency:
+            numberStyle = .CurrencyStyle
+            break
+            
+        case .Percent:
+            numberStyle = .PercentStyle
+            break
+            
+        default:
+            numberStyle = .NoStyle
+            break
+        }
+        
     }
 }
