@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54783C281C46B3D00086BF2A /* UIButton+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54783C271C46B3D00086BF2A /* UIButton+Appendix.swift */; };
 		A91C97A71B57FFF400297E53 /* NSURL+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */; };
 		A98A00141B418D540070711D /* UIColor+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00131B418D540070711D /* UIColor+Appendix.swift */; };
 		A98A00161B418D810070711D /* UIView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A00151B418D810070711D /* UIView+Appendix.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54783C271C46B3D00086BF2A /* UIButton+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Appendix.swift"; sourceTree = "<group>"; };
 		A91C97A61B57FFF400297E53 /* NSURL+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Appendix.swift"; sourceTree = "<group>"; };
 		A98A00131B418D540070711D /* UIColor+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Appendix.swift"; sourceTree = "<group>"; };
 		A98A00151B418D810070711D /* UIView+Appendix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Appendix.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				A9C691EB1B67E84500307F4B /* UITableView+Appendix.swift */,
 				A9CEC0D31B78F6510094473E /* CGRect+Appendix.swift */,
 				A9CEC0D51B78FB740094473E /* CGAffineTransform+Appendix.swift */,
+				54783C271C46B3D00086BF2A /* UIButton+Appendix.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				A9C748CB1B42D72E0015884D /* UITextView+Appendix.swift in Sources */,
 				A98A001C1B418DF60070711D /* Array+Appendix.swift in Sources */,
 				A9C691E31B67CA5200307F4B /* Dictionary+Appendix.swift in Sources */,
+				54783C281C46B3D00086BF2A /* UIButton+Appendix.swift in Sources */,
 				A98A001F1B418E570070711D /* Dispatch.swift in Sources */,
 				A9C691EC1B67E84500307F4B /* UITableView+Appendix.swift in Sources */,
 				A9CEC0D41B78F6510094473E /* CGRect+Appendix.swift in Sources */,
