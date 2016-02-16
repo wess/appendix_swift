@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.author        = "Wess Cope"
   s.platform      = :ios, '8.0'
   s.source        = { :git => "https://github.com/wess/appendix.git", :tag => "0.0.2" }
-  s.source_files  = "Appendix/*.*"
+  s.source_files  = "Sources/*.*"
 end
