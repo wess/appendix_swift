@@ -110,7 +110,7 @@
 		A98AFFEB1B418C990070711D = {
 			isa = PBXGroup;
 			children = (
-				A98AFFF71B418C990070711D /* Appendix */,
+				A98AFFF71B418C990070711D /* Sources */,
 				A98AFFF61B418C990070711D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A98AFFF71B418C990070711D /* Appendix */ = {
+		A98AFFF71B418C990070711D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				A98AFFFA1B418C990070711D /* Appendix.h */,
@@ -133,7 +133,7 @@
 				A98A00111B418CAF0070711D /* Foundation */,
 				A98AFFF81B418C990070711D /* Supporting Files */,
 			);
-			path = Appendix;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		A98AFFF81B418C990070711D /* Supporting Files */ = {
@@ -348,7 +348,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Appendix/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wesscope.$(PRODUCT_NAME:rfc1034identifier)";
@@ -366,7 +366,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Appendix/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wesscope.$(PRODUCT_NAME:rfc1034identifier)";

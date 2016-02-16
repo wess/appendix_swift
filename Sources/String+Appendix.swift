@@ -12,7 +12,7 @@ public func formatString(string:String, pattern:String, maskCharacter character:
     var result  = pattern as NSString
     var index   = 0
     
-    for var i = 0; i < pattern.length; i++ {
+    for i in 0 ..< pattern.length {
             let str             = string as NSString
             let range:NSRange   = NSMakeRange(i, 1)
             let current         = str.substringWithRange(range)
@@ -22,7 +22,7 @@ public func formatString(string:String, pattern:String, maskCharacter character:
             
             result = result.stringByReplacingCharactersInRange(range, withString: replacement)
             
-            index++
+            index += 1
         }
     }
     
@@ -75,7 +75,7 @@ public extension String {
         }
         
         
-        return self[Range(start:indexFirst, end: indexLast)]
+        return self[indexFirst..<indexLast]
     }
 
     public func sizeConstraintedToWidth(width:CGFloat, font:UIFont) -> CGSize {

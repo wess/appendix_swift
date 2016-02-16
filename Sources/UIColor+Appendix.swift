@@ -21,15 +21,15 @@ public extension UIColor {
         
         if hex.characters.count == 3 {
             let red   = hex.substringToIndex(hex.startIndex.advancedBy(1))
-            let green = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(1), end: hex.startIndex.advancedBy(2)))
+            let green = hex.substringWithRange(hex.startIndex.advancedBy(1)..<hex.startIndex.advancedBy(2))
             let blue  = hex.substringFromIndex(hex.startIndex.advancedBy(2))
             
             hex = red + red + green + green + blue + blue
         }
         
         let red      = hex.substringToIndex(hex.startIndex.advancedBy(2))
-        let green    = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(2), end: hex.startIndex.advancedBy(4)))
-        let blue     = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(4), end: hex.startIndex.advancedBy(6)))
+        let green    = hex.substringWithRange(hex.startIndex.advancedBy(2)..<hex.startIndex.advancedBy(4))
+        let blue     = hex.substringWithRange(hex.startIndex.advancedBy(4)..<hex.startIndex.advancedBy(6))
         
         var redInt:   CUnsignedInt = 0
         var greenInt: CUnsignedInt = 0
