@@ -137,6 +137,38 @@ public extension NSDate {
         return date
     }
     
+    public convenience init?(from string:String, format:String)  {
+        let formatter           = NSDateFormatter()
+        formatter.dateFormat    = format
+
+        guard let date = formatter.dateFromString(string) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, sinceDate: date)
+    }
+    
+    public convenience init?(month:Int, day:Int, year:Int, calendar:NSCalendar) {
+        let components      = NSDateComponents()
+        components.year     = year
+        components.day      = day
+        components.month    = month
+        
+        guard let date = calendar.dateFromComponents(components) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, sinceDate: date)
+    }
+    
+    public convenience init?(month:Int, day:Int, year:Int) {
+        guard let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian) else {
+            return nil
+        }
+        
+        self.init(month:month, day:day, year:year, calendar:calendar)
+    }
+    
     public func isEqualToDateIgnoringTime(date: NSDate) -> Bool
     {
         let calendar = NSCalendar.currentCalendar()

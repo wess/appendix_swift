@@ -9,27 +9,27 @@
 import Foundation
 
 public func formatString(string:String, pattern:String, maskCharacter character:String = "#", placeholder:String = "") -> String {
-    var result  = pattern as NSString
-    var index   = 0
     
-    for i in 0 ..< pattern.length {
-            let str             = string as NSString
-            let range:NSRange   = NSMakeRange(i, 1)
-            let current         = str.substringWithRange(range)
-        
-        if current == character && index < string.length {
-            let replacement = str.substringWithRange(NSMakeRange(index, 1))
-            
-            result = result.stringByReplacingCharactersInRange(range, withString: replacement)
-            
-            index += 1
+    let patternArray:[String]   = pattern.characters.map { String($0) }
+    let stringArray:[String]    = string.characters.map { String($0) }
+    var result:[String]         = patternArray
+    
+    var current = 0
+    
+    for index in 0 ..< patternArray.count {
+        if current < stringArray.count {
+            let char = patternArray[index]
+            if char == character {
+                result[index] = stringArray[current]
+                
+                current += 1
+            }
         }
     }
     
-    result = result.stringByReplacingOccurrencesOfString(character, withString: placeholder)
-    
-    return result as String
+    return result.joinWithSeparator("").stringByReplacingOccurrencesOfString(character, withString: placeholder)
 }
+
 
 public extension String {
 
