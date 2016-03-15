@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/wess/appendix"
   s.license       = { :type => "MIT", :file => "LICENSE" }
   s.author        = "Wess Cope"
-  s.platform      = :ios, '8.0'
+  s.platform      = :ios, '9.0'
   s.source        = { :git => "https://github.com/wess/appendix.git", :tag => "0.0.4" }
   s.source_files  = "Sources/*.*"
 end
