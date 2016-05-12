@@ -51,7 +51,40 @@ public struct DateComponents {
     static var All:NSCalendarUnit               = ([Minute, Hour, Day, Weekday, WeekdayOrdinal, Month, Year])
 }
 
-public extension NSDate {
+public enum ISODateFormatter {
+    case Year
+    case YearMonth
+    case Date
+    case DateTime
+    case Full
+    case Extended
+    
+    var format:String {
+        switch self {
+        case Year:
+            return "yyyy"
+        case YearMonth:
+            return "yyyy-MM"
+        case Date:
+            return "yyyy-MM-dd"
+        case DateTime:
+            return "yyyy-MM-dd'T'HH:mmZZZZZ"
+        case Full:
+            return "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        case Extended:
+            return "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        }
+    }
+    
+    var formatter:NSDateFormatter {
+        let formatter           = NSDateFormatter()
+        formatter.dateFormat    = self.format
+        
+        return formatter
+    }
+}
+
+public extension NSDate /* Properties */ {
     public var components: NSDateComponents {
         return NSCalendar.currentCalendar().components((DateComponents.All), fromDate: self)
     }
@@ -112,7 +145,9 @@ public extension NSDate {
     public class var Tomorrow:NSDate {
         return NSDate.dateWithDaysFromNow(1)
     }
-    
+}
+
+public extension NSDate /* functions */ {
     public func since(date: NSDate) -> NSDate {
         return date.dateByAddingTimeInterval(date.timeIntervalSinceDate(self))
     }
@@ -137,6 +172,30 @@ public extension NSDate {
         return date
     }
     
+    public func isEqualToDateIgnoringTime(date: NSDate) -> Bool
+    {
+        let calendar = NSCalendar.currentCalendar()
+        let comp1 = calendar.components(DateComponents.All, fromDate: self)
+        let comp2 = calendar.components(DateComponents.All, fromDate: date)
+        
+        return ((comp1.year == comp2.year) && (comp1.month == comp2.month) && (comp1.day == comp2.day))
+    }
+}
+
+public extension NSDate /* Formatting */ {
+    public func toString(format:String) -> String {
+        let formatter           = NSDateFormatter()
+        formatter.dateFormat    = format
+        
+        return formatter.stringFromDate(self)
+    }
+    
+    public func toISOString(type:ISODateFormatter) -> String {
+        return type.formatter.stringFromDate(self)
+    }
+}
+
+public extension NSDate /* Convenience */ {
     public convenience init?(from string:String, format:String)  {
         let formatter           = NSDateFormatter()
         formatter.dateFormat    = format
@@ -168,17 +227,10 @@ public extension NSDate {
         
         self.init(month:month, day:day, year:year, calendar:calendar)
     }
-    
-    public func isEqualToDateIgnoringTime(date: NSDate) -> Bool
-    {
-        let calendar = NSCalendar.currentCalendar()
-        let comp1 = calendar.components(DateComponents.All, fromDate: self)
-        let comp2 = calendar.components(DateComponents.All, fromDate: date)
-        
-        return ((comp1.year == comp2.year) && (comp1.month == comp2.month) && (comp1.day == comp2.day))
-    }
 }
 
+
+// Date operators
 public func / (date: NSDate, right: Int) -> NSDate {
     let calendar    = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     let components  = calendar.components([DateComponents.Year, DateComponents.Month, DateComponents.Day], fromDate: date)
@@ -222,3 +274,4 @@ public func / (month: Int, right: Int) -> NSDate {
     
     return NSCalendar.currentCalendar().dateFromComponents(components)!
 }
+

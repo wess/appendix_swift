@@ -77,7 +77,9 @@ public extension String {
         
         return self[indexFirst..<indexLast]
     }
+}
 
+public extension String /* Size */ {
     public func sizeConstraintedToWidth(width:CGFloat, font:UIFont) -> CGSize {
         let string  = NSString(string: self)
         let bounds  = string.boundingRectWithSize(CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSFontAttributeName: font], context: nil)
@@ -91,7 +93,9 @@ public extension String {
         
         return bounds.size
     }
+}
 
+public extension String /* Formatting  */ {
     public func removeHTML() -> String {
         var html            = self
         let scanner         = NSScanner(string: html)
@@ -125,6 +129,23 @@ public extension String {
         return self.rangeOfString(string) != nil
     }
 }
+
+public extension String /* Date */ {
+    func toDate(format:String) -> NSDate? {
+        let formatter           = NSDateFormatter()
+        formatter.dateFormat    = format
+        
+        return formatter.dateFromString(self)
+    }
+    
+    func toISODate(type:ISODateFormatter) -> NSDate? {
+        return type.formatter.dateFromString(self)
+    }
+}
+
+
+
+
 
 
 
