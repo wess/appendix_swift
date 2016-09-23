@@ -38,14 +38,14 @@ public extension String {
 }
 
 public extension String /* Size */ {
-    public func sizeConstraintedToWidth(width:CGFloat, font:UIFont) -> CGSize {
+    public func sizeConstrainted(to width:CGFloat, font:UIFont) -> CGSize {
         let string  = NSString(string: self)
         let bounds  = string.boundingRect(with: CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSFontAttributeName: font], context: nil)
         
         return bounds.size
     }
 
-    public func sizeConstraintedToSize(size:CGSize, font:UIFont) -> CGSize {
+    public func sizeConstrainted(to size:CGSize, font:UIFont) -> CGSize {
         let string  = NSString(string: self)
         let bounds  = string.boundingRect(with: size, options: [], attributes: [NSFontAttributeName: font], context: nil)
         
@@ -89,11 +89,11 @@ public extension String /* Formatting  */ {
 }
 
 public extension String /* Date */ {
-    func toDate(format:String) -> NSDate? {
+    func date(format:String) -> Date? {
         let formatter           = DateFormatter()
         formatter.dateFormat    = format
         
-        return formatter.date(from: self) as NSDate?
+        return formatter.date(from: self)
     }
 }
 

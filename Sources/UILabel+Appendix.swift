@@ -11,7 +11,7 @@ import Foundation
 public extension UILabel {
     
     public func suggestedSize(width:Float) -> CGSize {
-        return CGSize.zero
+        return suggestedSize(string: self.text ?? "", width: width)
     }
     
     public func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {

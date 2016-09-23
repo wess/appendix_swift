@@ -9,9 +9,9 @@
 import Foundation
 
 public extension Int {
-    public var isEven:Bool         { return (self % 2 == 0) }
-    public var doubleValue:Double  { return Double(self) }
-    public var floatValue:Float    { return Float(self) }
+    public var isEven:Bool      { return (self % 2 == 0) }
+    public var double:Double    { return Double(self) }
+    public var float:Float      { return Float(self) }
 }
 
 

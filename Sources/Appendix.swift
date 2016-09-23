@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct iOS {
+public struct Environment {
     public struct App {
         public static let version:String       = Bundle.main.infoDictionary!["CFBundleShortVersionString"]   as! String
         public static let bundleVersion:String = Bundle.main.infoDictionary!["CFBundleVersion"]              as! String
@@ -40,3 +40,4 @@ public struct iOS {
     }
 }
 
+typealias Env = Environment
