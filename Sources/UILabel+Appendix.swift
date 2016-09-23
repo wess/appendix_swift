@@ -19,7 +19,7 @@ public extension UILabel {
             return .zero
         }
         
-        return self.font.sizeOfString(string.string, constrainedToWidth: Double(width))
+        return self.font.size(of: string.string, constrainedToWidth: Double(width))
     }
     
     public func suggestedSize(string:String, width:Float) -> CGSize {

@@ -41,7 +41,7 @@ public extension UIView {
     
     public var width:CGFloat {
         get {
-            return CGRectGetWidth(self.frame)
+            return self.frame.width
         }
         
         set {
@@ -56,22 +56,20 @@ public extension UIView {
     
     public var height:CGFloat {
         get {
-            return CGRectGetHeight(self.frame)
+            return self.frame.height
         }
         
         set {
-            var size    = self.size
-            size.height = newValue
+            var frame           = self.frame
+            frame.size.height   = newValue
             
-            var frame   = self.frame
-            frame.size  = self.size
-            self.frame  = frame
+            self.frame = frame
         }
     }
     
     public var top:CGFloat {
         get {
-            return CGRectGetMinY(self.frame)
+            return self.frame.top
         }
         
         set {
@@ -116,7 +114,7 @@ public extension UIView {
     
     public var left:CGFloat {
         get {
-            return CGRectGetMinX(self.frame)
+            return self.frame.minX
         }
         
         set {
@@ -151,24 +149,24 @@ public extension UIView {
     
     public var borderColor:UIColor {
         get {
-            return UIColor(CGColor: self.layer.borderColor!)
+            return UIColor(cgColor: self.layer.borderColor!)
         }
         
         set {
-            self.layer.borderColor = (newValue as UIColor).CGColor
+            self.layer.borderColor = (newValue as UIColor).cgColor
         }
     }
     
     public var snapshot:UIImage {
         get {
             UIGraphicsBeginImageContextWithOptions(size, true, 0)
-            drawViewHierarchyInRect(bounds, afterScreenUpdates: true)
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
             
             let rasterizedView = UIGraphicsGetImageFromCurrentImageContext()
             
             UIGraphicsEndImageContext()
             
-            return rasterizedView
+            return rasterizedView!
         }
     }
     
@@ -176,28 +174,23 @@ public extension UIView {
         get { return [] }
 
         set {
-            var colors = [CGColor]()
-            newValue.each { index, element in
-                colors.append(element.CGColor)
-            }
-            
             let gradLayer       = CAGradientLayer()
-            gradLayer.colors    = colors
+            gradLayer.colors    = newValue.map { $0.cgColor }
             gradLayer.frame     = bounds
             
             layer.addSublayer(gradLayer)
         }
     }
     
-    public func rotate(degrees:Float, duration:NSTimeInterval, completion:((Bool) -> Void)) {
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveLinear, animations: { () -> Void in
-            self.transform = CGAffineTransformRotate(self.transform, CGFloat(RadiansFromDegrees(degrees)))
+    public func rotate(degrees:Float, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
+        UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: { () -> Void in
+            self.transform = self.transform.rotated(by: CGFloat(RadiansFromDegrees(degrees: degrees)))
         }, completion: completion)
     }
     
-    public func scale(offset:CGPoint, duration:NSTimeInterval, completion:((Bool) -> Void)) {
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveLinear, animations: { () -> Void in
-            self.transform = CGAffineTransformScale(self.transform, offset.x, offset.y)
+    public func scale(offset:CGPoint, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
+        UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: { () -> Void in
+            self.transform = self.transform.scaledBy(x: offset.x, y: offset.y)
         }, completion: completion)
     }
 }

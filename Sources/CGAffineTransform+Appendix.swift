@@ -1,3 +1,4 @@
+
 //
 //  CGAffineTransform+Appendix.swift
 //  Appendix
@@ -8,17 +9,13 @@
 
 import Foundation
 
-extension CGAffineTransform : Equatable {}
-public func ==(left:CGAffineTransform, right:CGAffineTransform) -> Bool {
-    return CGAffineTransformEqualToTransform(left, right)
-}
 
 public func +(left:CGAffineTransform, right:CGAffineTransform) -> CGAffineTransform {
-    return left.concat(right)
+    return left.concat(transform: right)
 }
 
 public extension CGAffineTransform {
-    var isIdentity:Bool { return CGAffineTransformIsIdentity(self) }
+    var isIdentity:Bool { return self.isIdentity }
     
     public init(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) {
         self.init(a: CGFloat(a), b: CGFloat(b), c: CGFloat(c), d: CGFloat(d), tx: CGFloat(tx), ty: CGFloat(ty))
@@ -65,41 +62,41 @@ public extension CGAffineTransform {
     }
 
     public func translate(x: CGFloat, y: CGFloat) -> CGAffineTransform {
-        return CGAffineTransformTranslate(self, tx, ty)
+        return self.translatedBy(x: tx, y: ty)
     }
     public func translate(x: Double, y: Double) -> CGAffineTransform {
-        return translate(CGFloat(x), y: CGFloat(y))
+        return translate(x: CGFloat(x), y: CGFloat(y))
     }
     public func translate(x: Int, y: Int) -> CGAffineTransform {
-        return translate(CGFloat(x), y: CGFloat(y))
+        return translate(x: CGFloat(x), y: CGFloat(y))
     }
     
     public func scale(x: CGFloat, y: CGFloat) -> CGAffineTransform {
-        return CGAffineTransformScale(self, x, y)
+        return self.scaledBy(x: x, y: y)
     }
 
     public func scale(x: Double, y: Double) -> CGAffineTransform {
-        return CGAffineTransformScale(self, CGFloat(x), CGFloat(y))
+        return self.scaledBy(x: CGFloat(x), y: CGFloat(y))
     }
     
     public func scale(x: Int, y: Int) -> CGAffineTransform {
-        return CGAffineTransformScale(self, CGFloat(x), CGFloat(y))
+        return self.scaledBy(x: CGFloat(x), y: CGFloat(y))
     }
     
     public func rotate(angle: CGFloat) -> CGAffineTransform {
-        return CGAffineTransformRotate(self, angle)
+        return self.rotated(by: angle)
     }
 
     public func rotate(angle: Double) -> CGAffineTransform {
-        return CGAffineTransformRotate(self, CGFloat(angle))
+        return self.rotated(by: CGFloat(angle))
     }
     
     public func rotate(angle: Int) -> CGAffineTransform {
-        return CGAffineTransformRotate(self, CGFloat(angle))
+        return self.rotated(by: CGFloat(angle))
     }
 
     public func invert() -> CGAffineTransform {
-        return CGAffineTransformInvert(self)
+        return self.inverted()
     }
     
     public var inverse: CGAffineTransform {
@@ -107,7 +104,7 @@ public extension CGAffineTransform {
     }
     
     public func concat(transform: CGAffineTransform) -> CGAffineTransform {
-        return CGAffineTransformConcat(self, transform)
+        return self.concatenating(transform)
     }
 }
 

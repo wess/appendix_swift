@@ -14,52 +14,52 @@ public enum AppendixNumberFormatterType {
     case None
 }
 
-public extension NSNumberFormatter {
-    public class func currencyFormatter() -> NSNumberFormatter {
-        let formatter       = NSNumberFormatter()
-        formatter.locale    = NSLocale.currentLocale()
+public extension NumberFormatter {
+    public class func currencyFormatter() -> NumberFormatter {
+        let formatter       = NumberFormatter()
+        formatter.locale    = NSLocale.current
 
         return formatter
 
     }
     
-    public class func currencyFormatter(forLocal locale: NSLocale) -> NSNumberFormatter {
-        let formatter       = NSNumberFormatter()
+    public class func currencyFormatter(forLocal locale: Locale) -> NumberFormatter {
+        let formatter       = NumberFormatter()
         formatter.locale    = locale
         
         return formatter
     }
     
-    public class func percentFormatter() -> NSNumberFormatter {
-        let formatter = NSNumberFormatter.percentFormatter(forLocal: NSLocale.currentLocale())
+    public class func percentFormatter() -> NumberFormatter {
+        let formatter = NumberFormatter.percentFormatter(forLocal: Locale.current)
 
         return formatter
     }
     
-    public class func percentFormatter(forLocal locale: NSLocale) -> NSNumberFormatter {
-        let formatter           = NSNumberFormatter()
+    public class func percentFormatter(forLocal locale: Locale) -> NumberFormatter {
+        let formatter           = NumberFormatter()
         formatter.locale        = locale
-        formatter.numberStyle   = .PercentStyle
+        formatter.numberStyle   = .percent
         
         return formatter
     }
 
-    public convenience init(locale:NSLocale?, type:AppendixNumberFormatterType = .None) {
+    public convenience init(locale:Locale?, type:AppendixNumberFormatterType = .None) {
         self.init()
 
-        self.locale = locale ?? NSLocale.currentLocale()
+        self.locale = locale ?? Locale.current
         
         switch type {
         case .Currency:
-            numberStyle = .CurrencyStyle
+            numberStyle = .currency
             break
             
         case .Percent:
-            numberStyle = .PercentStyle
+            numberStyle = .percent
             break
             
         default:
-            numberStyle = .NoStyle
+            numberStyle = .none
             break
         }
         

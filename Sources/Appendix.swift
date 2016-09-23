@@ -8,56 +8,30 @@
 
 import Foundation
 
-struct Appendix {
-    struct app {
-        static let version:String       = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"]   as! String
-        static let bundleVersion:String = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"]              as! String
-        static let executable:String    = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"]           as! String
-        static let name:String          = NSBundle.mainBundle().infoDictionary!["CFBundleName"]                 as! String
-    }
-    
-    struct system {
-        static let name:String      = UIDevice.currentDevice().systemName
-        static let version:String   = UIDevice.currentDevice().systemVersion
-        
-        static func VersionEqualTo(version:String) -> Bool {
-            return UIDevice.currentDevice().systemVersion.compare(version, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedSame
-        }
-        
-        static func VersionGreaterThan(version:String) -> Bool {
-            return UIDevice.currentDevice().systemVersion.compare(version, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedDescending
-        }
-        
-        static func VersionGreaterThanOrEqual(version:String) -> Bool {
-            return UIDevice.currentDevice().systemVersion.compare(version, options: NSStringCompareOptions.NumericSearch) != NSComparisonResult.OrderedAscending
-        }
-
-        static func VersionLessThan(version:String) -> Bool {
-            return UIDevice.currentDevice().systemVersion.compare(version, options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
-        }
-        
-        static func VersionLessThanOrEqual(version:String) -> Bool {
-            return UIDevice.currentDevice().systemVersion.compare(version, options: NSStringCompareOptions.NumericSearch) != NSComparisonResult.OrderedDescending
-        }
-
+public struct iOS {
+    public struct App {
+        public static let version:String       = Bundle.main.infoDictionary!["CFBundleShortVersionString"]   as! String
+        public static let bundleVersion:String = Bundle.main.infoDictionary!["CFBundleVersion"]              as! String
+        public static let executable:String    = Bundle.main.infoDictionary!["CFBundleExecutable"]           as! String
+        public static let name:String          = Bundle.main.infoDictionary!["CFBundleName"]                 as! String
     }
 
-    struct device {
-        enum DeviceType {
+    public struct device {
+        public enum DeviceType {
             case iPad
             case iPhone
             case Unspecified
         }
         
-        static let mode:String = UIDevice.currentDevice().model
+        public static let mode:String = UIDevice.current.model
         
-        static func isType(type:DeviceType) -> Bool {
+        public static func isType(type:DeviceType) -> Bool {
             switch type {
             case .iPad:
-                return (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+                return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad)
                 
             case .iPhone:
-                return (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+                return (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone)
                 
             default:
                 return false

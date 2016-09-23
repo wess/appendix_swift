@@ -18,20 +18,18 @@ public  extension UIImage {
         color.set()
         UIRectFill(rect)
         
-        drawInRect(rect, blendMode: .DestinationIn, alpha: 1)
+        draw(in: rect, blendMode: .destinationIn, alpha: 1)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
     public func crop(to rect:CGRect) -> UIImage {
         let scaled  = CGRect(x: (rect.left * scale), y: (rect.top * scale), width: (rect.width * scale), height:(rect.height * scale))
-        let ref     = CGImageCreateWithImageInRect(self.CGImage, scaled)!
+        let ref     = self.cgImage!.cropping(to: scaled)!
 
-        return UIImage(CGImage: ref, scale: scale, orientation: .Up)
+        return UIImage(cgImage: ref, scale: scale, orientation: .up)
     }
-    
-    
 }

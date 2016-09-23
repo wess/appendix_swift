@@ -18,13 +18,13 @@ public extension Array {
             return location < 0 ? (count + location) : location
         }
         
-        let position = relativePosition(index)
+        let position = relativePosition(index: index)
         
         return position < count ? self[position] : nil
     }
     
-    public func indexOf (condition: Element -> Bool) -> Int? {
-        for (index, element) in self.enumerate() {
+    public func indexOf (condition: (Element) -> Bool) -> Int? {
+        for (index, element) in self.enumerated() {
             if condition(element) {
                 return index
             }
@@ -35,7 +35,7 @@ public extension Array {
     
     public func indexOf <U: Equatable> (item: U) -> Int? {
         if item is Element {
-            return unsafeBitCast(self, [U].self).indexOf(item)
+            return unsafeBitCast(self, to: [U].self).index(of: item)
         }
         
         return nil
@@ -52,9 +52,6 @@ public extension Array {
         return true
     }
     
-    public func contains<T:Equatable>(items: T...) -> Bool {
-        return items.all { self.indexOf($0) >= 0 }
-    }
     
     public func difference<T: Equatable>(values: [T]...) -> [T] {
         var result = [T]()
@@ -72,26 +69,6 @@ public extension Array {
         }
         
         return result
-    }
-    
-    public func merge<U: Equatable>(values: [U]...) -> Array {
-        var result = self
-        
-        for array in values {
-            for value in array {
-                if !result.contains(value) {
-                    result.append(value as! Element)
-                }
-            }
-        }
-        
-        return result
-    }
-    
-    public func each(handler:(index:Int, element:Element) -> ()) {
-        for (index, value) in enumerate() {
-            handler(index: index, element: value)
-        }
     }
     
     public func filter(handler:(Element) -> Bool) -> Array {
@@ -113,6 +90,6 @@ public func - <T: Equatable> (first: Array<T>, second: T) -> Array<T> {
 }
 
 public func - <T: Equatable> (first: Array<T>, second: Array<T>) -> Array<T> {
-    return first.difference(second)
+    return first.difference(values: second)
 }
 

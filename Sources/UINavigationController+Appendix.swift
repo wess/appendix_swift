@@ -17,18 +17,18 @@ public extension UINavigationController {
         
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationTransition(transition, forView: self.view, cache: true)
+        UIView.setAnimationTransition(transition, for: self.view, cache: true)
         UIView.commitAnimations()
     }
 
     public func popViewControllerWithTransition(transition:UIViewAnimationTransition) -> UIViewController {
         UIView.beginAnimations(nil, context: nil)
         
-        let controller:UIViewController = self.popViewControllerAnimated(false)!
+        let controller:UIViewController = self.popViewController(animated: false)!
         
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationTransition(transition, forView: self.view, cache: true)
+        UIView.setAnimationTransition(transition, for: self.view, cache: true)
         UIView.commitAnimations()
         
         return controller

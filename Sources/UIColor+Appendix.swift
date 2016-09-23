@@ -14,30 +14,30 @@ public extension UIColor {
         var hex = hexString
         
         if hex.hasPrefix("#") {
-            hex = hex.substringFromIndex(hex.startIndex.advancedBy(1))
+            hex = hex.substring(from: hex.index(after: hex.startIndex))
         }
         
         assert(hex.characters.count == 6 || hex.characters.count == 3)
         
         if hex.characters.count == 3 {
-            let red   = hex.substringToIndex(hex.startIndex.advancedBy(1))
-            let green = hex.substringWithRange(hex.startIndex.advancedBy(1)..<hex.startIndex.advancedBy(2))
-            let blue  = hex.substringFromIndex(hex.startIndex.advancedBy(2))
-            
+            let red     = hex.substring(to: hex.index(after: hex.startIndex))
+            let green   = hex.substring(with: hex.index(after: hex.startIndex)..<hex.index(hex.index(after: hex.startIndex), offsetBy: 2))
+            let blue    = hex.substring(from: hex.index(after: hex.startIndex))
+
             hex = red + red + green + green + blue + blue
         }
         
-        let red      = hex.substringToIndex(hex.startIndex.advancedBy(2))
-        let green    = hex.substringWithRange(hex.startIndex.advancedBy(2)..<hex.startIndex.advancedBy(4))
-        let blue     = hex.substringWithRange(hex.startIndex.advancedBy(4)..<hex.startIndex.advancedBy(6))
+        let red     = hex.substring(to: hex.index(hex.startIndex, offsetBy: 2))
+        let green   = hex.substring(with: hex.index(hex.startIndex, offsetBy: 2)..<hex.index(hex.startIndex, offsetBy: 4))
+        let blue    = hex.substring(with: hex.index(hex.startIndex, offsetBy: 4)..<hex.index(hex.startIndex, offsetBy: 6))
         
         var redInt:   CUnsignedInt = 0
         var greenInt: CUnsignedInt = 0
         var blueInt:  CUnsignedInt = 0
         
-        NSScanner(string: red).scanHexInt(&redInt)
-        NSScanner(string: green).scanHexInt(&greenInt)
-        NSScanner(string: blue).scanHexInt(&blueInt)
+        Scanner(string: red).scanHexInt32(&redInt)
+        Scanner(string: green).scanHexInt32(&greenInt)
+        Scanner(string: blue).scanHexInt32(&blueInt)
         
         self.init(red: CGFloat(redInt) / 255.0, green: CGFloat(greenInt) / 255.0, blue: CGFloat(blueInt) / 255.0, alpha: CGFloat(alpha))
     }
@@ -56,7 +56,7 @@ public extension UIColor {
 
     public class func randomColor() -> UIColor {
         func randomVal() -> CGFloat {
-            return CGFloat(random())/CGFloat(RAND_MAX)
+            return CGFloat(arc4random())/CGFloat(RAND_MAX)
         }
         
         return UIColor(red: randomVal(), green: randomVal(), blue: randomVal(), alpha: 1.0)
@@ -64,35 +64,35 @@ public extension UIColor {
     
 // MARK: - methods
     public func changeAlpha(to:CGFloat) -> UIColor {
-        return self.colorWithAlphaComponent(to)
+        return self.withAlphaComponent(to)
     }
     
 // MARK: - Getters
     public var colorSpaceModel:CGColorSpaceModel {
         get {
-            return CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor))
+            return self.cgColor.colorSpace!.model
         }
     }
 
     public var usesMonochromeColorSpace:Bool {
         get {
-            return self.colorSpaceModel.rawValue == CGColorSpaceModel.Monochrome.rawValue
+            return self.colorSpaceModel.rawValue == CGColorSpaceModel.monochrome.rawValue
         }
     }
 
     var usesRGBColorspace:Bool {
         get {
-            return self.colorSpaceModel.rawValue == CGColorSpaceModel.RGB.rawValue
+            return self.colorSpaceModel.rawValue == CGColorSpaceModel.rgb.rawValue
         }
     }
     
     public var canProvideRGBComponents:Bool {
         get {
             switch self.colorSpaceModel.rawValue {
-            case CGColorSpaceModel.RGB.rawValue:
+            case CGColorSpaceModel.rgb.rawValue:
                 return true
                 
-            case CGColorSpaceModel.Monochrome.rawValue:
+            case CGColorSpaceModel.monochrome.rawValue:
                 return true
                 
             default:
@@ -108,11 +108,11 @@ public extension UIColor {
             var red:CGFloat = 0
             
             switch self.colorSpaceModel.rawValue {
-                case CGColorSpaceModel.RGB.rawValue:
+                case CGColorSpaceModel.rgb.rawValue:
                     self.getRed(&red, green: nil, blue: nil, alpha: nil)
                 break
                 
-                case CGColorSpaceModel.Monochrome.rawValue:
+                case CGColorSpaceModel.monochrome.rawValue:
                     self.getWhite(&red, alpha: nil)
                 break
                 
@@ -131,11 +131,11 @@ public extension UIColor {
             var green:CGFloat = 0
             
             switch self.colorSpaceModel.rawValue {
-            case CGColorSpaceModel.RGB.rawValue:
+            case CGColorSpaceModel.rgb.rawValue:
                 self.getRed(nil, green: &green, blue: nil, alpha: nil)
                 break
                 
-            case CGColorSpaceModel.Monochrome.rawValue:
+            case CGColorSpaceModel.monochrome.rawValue:
                 self.getWhite(&green, alpha: nil)
                 break
                 
@@ -154,11 +154,11 @@ public extension UIColor {
             var blue:CGFloat = 0
             
             switch self.colorSpaceModel.rawValue {
-            case CGColorSpaceModel.RGB.rawValue:
+            case CGColorSpaceModel.rgb.rawValue:
                 self.getRed(nil, green: nil, blue: &blue, alpha: nil)
                 break
                 
-            case CGColorSpaceModel.Monochrome.rawValue:
+            case CGColorSpaceModel.monochrome.rawValue:
                 self.getWhite(&blue, alpha: nil)
                 break
                 

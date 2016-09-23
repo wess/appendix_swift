@@ -12,8 +12,8 @@ import Swift
 public extension Dictionary {
     
     public init(json string:String) {
-        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
-            self = Dictionary(json: data)
+        if let data = string.data(using: String.Encoding.utf8) {
+            self = Dictionary(json: data as! NSData)
         }
         
         self = [:]
@@ -21,7 +21,7 @@ public extension Dictionary {
     
     public init(json data:NSData) {
         do {
-            self = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as! [Key:Value]
+            self = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as! [Key:Value]
         }
         catch let error as NSError {
             fatalError(error.description)
@@ -34,13 +34,13 @@ public extension Dictionary {
         var cleanSelf:[String: AnyObject] = [:]
         
         for (key,val) in self {
-            cleanSelf["\(key)"] = "\(val)"
+            cleanSelf["\(key)"] = "\(val)" as AnyObject?
         }
         
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(cleanSelf, options: NSJSONWritingOptions(rawValue: 0))
+            let data = try JSONSerialization.data(withJSONObject: cleanSelf, options: JSONSerialization.WritingOptions(rawValue: 0))
             
-            return data
+            return data as NSData?
         }
         catch {
             return nil
@@ -49,7 +49,7 @@ public extension Dictionary {
     
     public func jsonString() -> String? {
         if let data = self.jsonData() {
-            if let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+            if let str = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as? String {
                 return str
             }
         }
@@ -64,20 +64,14 @@ public extension Dictionary {
             qry.append("\(key)=\(val)")
         }
         
-        return qry.joinWithSeparator("&")
+        return qry.joined(separator: "&")
     }
     
-    public func each(handler:(key:Key, value:Value) -> ()) {
-        for(key, val) in self {
-            handler(key: key, value: val)
-        }
-    }
-    
-    public func filter(handler:(key:Key, value:Value) -> Bool) -> Dictionary {
+    public func filter(handler:(_ key:Key, _ value:Value) -> Bool) -> Dictionary {
         var result = Dictionary()
         
         for(key, val) in self {
-            if handler(key: key, value: val) {
+            if handler(key, val) {
                 result[key] = val
             }
         }
@@ -86,13 +80,13 @@ public extension Dictionary {
     }
 
     public func has(key:Key) -> Bool {
-        return indexForKey(key) != nil
+        return index(forKey: key) != nil
     }
     
     public func difference<Val:Equatable>(collection:[Key:Val]...) -> [Key:Val] {
         var result = [Key:Val]()
         
-        each { k,v in
+        for (k,v) in self {
             if let item = v as? Val {
                 result[k] = item
             }
@@ -100,8 +94,8 @@ public extension Dictionary {
         
         for dict in collection {
             for(key, val) in dict {
-                if result.has(key) && result[key] == val {
-                    result.removeValueForKey(key)
+                if result.has(key: key) && result[key] == val {
+                    result.removeValue(forKey: key)
                 }
             }
         }
@@ -112,5 +106,5 @@ public extension Dictionary {
 
 
 public func - <K, V: Equatable> (first: [K: V], second: [K: V]) -> [K: V] {
-    return first.difference(second)
+    return first.difference(collection: second)
 }
