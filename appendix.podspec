@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name          = "Appendix"
-  s.version       = "0.0.6"
+  s.version       = "0.1.0"
   s.summary       = "Some Swifty helpers"
   s.description   = "Just some helpers and extensions for Swift."
   s.homepage      = "https://github.com/wess/appendix"

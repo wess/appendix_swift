@@ -40,4 +40,12 @@ public struct Environment {
     }
 }
 
-typealias Env = Environment
+public typealias Env = Environment
+
+public func sync(target:AnyObject, block:((Void)->Void)) {
+    objc_sync_enter(target)
+    defer { objc_sync_exit(target) }
+
+    block()
+}
+

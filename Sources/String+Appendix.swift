@@ -51,6 +51,10 @@ public extension String /* Size */ {
         
         return bounds.size
     }
+    
+    public func trim() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
 
 public extension String /* Formatting  */ {
@@ -97,7 +101,32 @@ public extension String /* Date */ {
     }
 }
 
-
+public extension String /* Subscript */{
+    public subscript(index:Int) -> String {
+        let start       = self.index(startIndex, offsetBy: index)
+        let end         = self.index(start, offsetBy: 1)
+        let subrange    = start ..< end
+        
+        return substring(with: subrange)
+    }
+    
+    
+    public subscript(range: Range<Int>) -> String {
+        let start       = self.index(startIndex, offsetBy: range.lowerBound)
+        let end         = self.index(start, offsetBy: range.upperBound)
+        let subrange    = start ..< end
+        
+        return substring(with: subrange)
+    }
+    
+    public subscript(index1: Int,  index2: Int) -> String {
+        let start       = self.index(startIndex, offsetBy: index1)
+        let end         = self.index(start, offsetBy:index2)
+        let subrange    = start ..< end
+        
+        return substring(with: subrange)
+    }
+}
 
 
 

@@ -263,6 +263,52 @@ public extension Date /* Calculations */ {
     }
 }
 
+public extension Date /* Convenience */ {
+    public init?(from:String, format:String)  {
+        let formatter           = DateFormatter()
+        formatter.dateFormat    = format
+        
+        guard let date = formatter.date(from: from) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, since: date)
+    }
+    
+    public init?(month:Int, day:Int, year:Int, calendar:NSCalendar) {
+        let components      = NSDateComponents()
+        components.year     = year
+        components.day      = day
+        components.month    = month
+        
+        guard let date = calendar.date(from: components as DateComponents) else {
+            return nil
+        }
+        
+        self.init(timeInterval: 0, since: date)
+    }
+    
+    public init?(month:Int, day:Int, year:Int) {
+        guard let calendar = NSCalendar(identifier: NSCalendar.Identifier.gregorian) else {
+            return nil
+        }
+        
+        self.init(month:month, day:day, year:year, calendar:calendar)
+    }
+}
+
+public extension Date /* Formatting */ {
+    public func toString(format:String) -> String {
+        let formatter           = DateFormatter()
+        formatter.dateFormat    = format
+        
+        return formatter.string(from: self)
+    }
+    
+    public func toISOString(type:ISODateFormatter) -> String {
+        return type.formatter.string(from: self)
+    }
+}
 
 
 
