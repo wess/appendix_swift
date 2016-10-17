@@ -1,0 +1,330 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 46;
+    rootObject = __RootObject_;
+    objects = {
+        __RootObject_ = {
+            isa = PBXProject;
+            attributes = {LastUpgradeCheck = 9999;};
+            buildConfigurationList = ___RootConfs_;
+            compatibilityVersion = 'Xcode 3.2';
+            developmentRegion = English;
+            hasScannedForEncodings = 0;
+            knownRegions = (en);
+            mainGroup = ___RootGroup_;
+            productRefGroup = ____Products_;
+            projectDirPath = '';
+            projectRoot = '';
+            targets = (______Target_Appendix);
+        };
+        '__PBXFileRef_Package.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Package.swift';
+            sourceTree = '<group>';
+        };
+        ___RootGroup_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_Package.swift', _____Configs_, _____Sources_,  Dependencies_, _______Tests_, ____Products_);
+            sourceTree = '<group>';
+        };
+        _______Group_Appendix = {
+            isa = PBXGroup;
+            name = 'Appendix';
+            path = 'Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Sources/Appendix.swift', '__PBXFileRef_Sources/Array+Appendix.swift', '__PBXFileRef_Sources/CGAffineTransform+Appendix.swift', '__PBXFileRef_Sources/CGRect+Appendix.swift', '__PBXFileRef_Sources/Date+Appendix.swift', '__PBXFileRef_Sources/Dictionary+Appendix.swift', '__PBXFileRef_Sources/Dispatch+Appendix.swift', '__PBXFileRef_Sources/File.swift', '__PBXFileRef_Sources/Int+Appendix.swift', '__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift', '__PBXFileRef_Sources/NSURL+Appendix.swift', '__PBXFileRef_Sources/String+Appendix.swift', '__PBXFileRef_Sources/UIColor+Appendix.swift', '__PBXFileRef_Sources/UIFont+Appendix.swift', '__PBXFileRef_Sources/UIImage+Appendix.swift', '__PBXFileRef_Sources/UILabel+Appendix.swift', '__PBXFileRef_Sources/UINavigationController+Appendix.swift', '__PBXFileRef_Sources/UITableView+Appendix.swift', '__PBXFileRef_Sources/UITextView+Appendix.swift', '__PBXFileRef_Sources/UIView+Appendix.swift');
+        };
+        '__PBXFileRef_Sources/Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Array+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Array+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/CGAffineTransform+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'CGAffineTransform+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/CGRect+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'CGRect+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Date+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Date+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Dictionary+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Dictionary+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Dispatch+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Dispatch+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/File.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'File.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Int+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'Int+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'NSNumberFormatter+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/NSURL+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'NSURL+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/String+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'String+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UIColor+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UIColor+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UIFont+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UIFont+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UIImage+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UIImage+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UILabel+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UILabel+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UINavigationController+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UINavigationController+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UITableView+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UITableView+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UITextView+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UITextView+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/UIView+Appendix.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            path = 'UIView+Appendix.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_Appendix = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_Appendix;
+            buildPhases = (CompilePhase_Appendix, ___LinkPhase_Appendix);
+            buildRules = ();
+            dependencies = ();
+            name = 'Appendix';
+            productName = Appendix;
+            productReference = _____Product_Appendix;
+            productType = 'com.apple.product-type.framework';
+        };
+        _____Product_Appendix = {
+            isa = PBXFileReference;
+            explicitFileType = 'wrapper.framework';
+            path = 'Appendix.framework';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_Appendix = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Sources/Appendix.swift', '__src_cc_ref_Sources/Array+Appendix.swift', '__src_cc_ref_Sources/CGAffineTransform+Appendix.swift', '__src_cc_ref_Sources/CGRect+Appendix.swift', '__src_cc_ref_Sources/Date+Appendix.swift', '__src_cc_ref_Sources/Dictionary+Appendix.swift', '__src_cc_ref_Sources/Dispatch+Appendix.swift', '__src_cc_ref_Sources/File.swift', '__src_cc_ref_Sources/Int+Appendix.swift', '__src_cc_ref_Sources/NSNumberFormatter+Appendix.swift', '__src_cc_ref_Sources/NSURL+Appendix.swift', '__src_cc_ref_Sources/String+Appendix.swift', '__src_cc_ref_Sources/UIColor+Appendix.swift', '__src_cc_ref_Sources/UIFont+Appendix.swift', '__src_cc_ref_Sources/UIImage+Appendix.swift', '__src_cc_ref_Sources/UILabel+Appendix.swift', '__src_cc_ref_Sources/UINavigationController+Appendix.swift', '__src_cc_ref_Sources/UITableView+Appendix.swift', '__src_cc_ref_Sources/UITextView+Appendix.swift', '__src_cc_ref_Sources/UIView+Appendix.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Sources/Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Appendix.swift';
+        };
+        '__src_cc_ref_Sources/Array+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Array+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/CGAffineTransform+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/CGAffineTransform+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/CGRect+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/CGRect+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/Date+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Date+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/Dictionary+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Dictionary+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/Dispatch+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Dispatch+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/File.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/File.swift';
+        };
+        '__src_cc_ref_Sources/Int+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Int+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/NSNumberFormatter+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/NSURL+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/NSURL+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/String+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/String+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UIColor+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UIColor+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UIFont+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UIFont+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UIImage+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UIImage+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UILabel+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UILabel+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UINavigationController+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UINavigationController+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UITableView+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UITableView+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UITextView+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UITextView+Appendix.swift';
+        };
+        '__src_cc_ref_Sources/UIView+Appendix.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/UIView+Appendix.swift';
+        };
+        ___LinkPhase_Appendix = {
+            isa = PBXFrameworksBuildPhase;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _______Confs_Appendix = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_Appendix, _ReleaseConf_Appendix);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_Appendix = {
+            isa = XCBuildConfiguration;
+            buildSettings = { SWIFT_VERSION = '3.0'; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'Appendix.xcodeproj/Appendix_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; PRODUCT_BUNDLE_IDENTIFIER = 'Appendix'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; OTHER_LDFLAGS = '$(inherited)'; };
+            name = Debug;
+        };
+        _ReleaseConf_Appendix = {
+            isa = XCBuildConfiguration;
+            buildSettings = { SWIFT_VERSION = '3.0'; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'Appendix.xcodeproj/Appendix_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; PRODUCT_BUNDLE_IDENTIFIER = 'Appendix'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; OTHER_LDFLAGS = '$(inherited)'; };
+            name = Release;
+        };
+        __Dependency_Appendix = {
+            isa = PBXTargetDependency;
+            target = ______Target_Appendix;
+        };
+        '__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig' = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.xcconfig;
+            path = 'Appendix.xcodeproj/Configs/Project.xcconfig';
+            sourceTree = '<group>';
+        };
+        _____Configs_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig');
+            name = Configs;
+            sourceTree = '<group>';
+        };
+        _____Sources_ = {
+            isa = PBXGroup;
+            children = (_______Group_Appendix);
+            name = Sources;
+            sourceTree = '<group>';
+        };
+        ____Products_ = {
+            isa = PBXGroup;
+            children = (_____Product_Appendix);
+            name = Products;
+            sourceTree = '<group>';
+        };
+        _______Debug_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Debug;
+        };
+        _____Release_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Release;
+        };
+        ___RootConfs_ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (_______Debug_, _____Release_);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+    };
+}

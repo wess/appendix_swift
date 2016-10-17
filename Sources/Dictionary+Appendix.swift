@@ -108,3 +108,9 @@ public extension Dictionary {
 public func - <K, V: Equatable> (first: [K: V], second: [K: V]) -> [K: V] {
     return first.difference(collection: second)
 }
+
+public func += <K, V>( lhs:inout [K:V], rhs:[K:V]) {
+    for (k,v) in rhs {
+        lhs.updateValue(v, forKey: k)
+    }
+}
