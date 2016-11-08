@@ -115,7 +115,7 @@ public  extension UIImage {
     return image
   }
   
-  public func resizeToFit(in size:CGSize, scale:Bool) -> UIImage? {
+  public func resizeToFit(in size:CGSize, scaleIfSmaller:Bool) -> UIImage? {
     guard let reference = CGImage else { return nil }
     
     var bounding      = size
