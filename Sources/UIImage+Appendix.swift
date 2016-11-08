@@ -133,7 +133,7 @@ public  extension UIImage {
     }
     
     let toSize:CGSize
-    if !scale && (referenceSize.width < bounding.width) && (referenceSize.height < bounding.height) {
+    if scaleIfSmaller == false && (referenceSize.width < bounding.width) && (referenceSize.height < bounding.height) {
       toSize = referenceSize
     } else {
       let ratio = ((bounding.width / referenceSize.width), (bounding.height / referenceSize.height))
