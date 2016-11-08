@@ -38,6 +38,7 @@ public  extension UIImage {
 
         return UIImage(CGImage: ref, scale: scale, orientation: .Up)
     }
+    
     public func resize(to size:CGSize) -> UIImage {
         guard let reference = CGImage else {
             return self
