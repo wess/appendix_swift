@@ -38,46 +38,6 @@ public  extension UIImage {
 
         return UIImage(CGImage: ref, scale: scale, orientation: .Up)
     }
-  
-  
-    public func resizedToFit(in size: CGSize, scaleIfSmaller scale: Bool) -> UIImage {
-        guard let reference = CGImage else {
-            return self
-        }
-        var bounding      = size
-        let width         = CGImageGetWidth(reference)
-        let height        = CGImageGetHeight(reference)
-        let referenceSize = CGSize(width: width, height: height)
-        
-        switch imageOrientation {
-        case .Left, .Right, .LeftMirrored, .RightMirrored:
-            bounding = CGSize(width: size.height, height: size.width)
-        default:
-            break
-        }
-        
-        let toSize:CGSize
-        if !scale && (referenceSize.width < bounding.width) && (referenceSize.height < bounding.height) {
-            toSize = referenceSize
-        } else {
-            let ratio = ((bounding.width / referenceSize.width), (bounding.height / referenceSize.height))
-            let width:CGFloat
-            let height:CGFloat
-            
-            if ratio.0 < ratio.1 {
-                width   = bounding.width
-                height  = CGFloat(floorf(Float(referenceSize.height) * Float(ratio.0)))
-            } else {
-                width   = CGFloat(floorf(Float(referenceSize.width) * Float(ratio.1)))
-                height  = bounding.height
-            }
-            
-            toSize = CGSize(width: width, height: height)
-        }
-        
-        return resize(to: toSize)
-    }
-    
     public func resize(to size:CGSize) -> UIImage {
         guard let reference = CGImage else {
             return self
@@ -146,6 +106,44 @@ public  extension UIImage {
         UIGraphicsEndImageContext()
         
         return image
+    }
+  
+    public func resizedToFit(in size: CGSize, scaleIfSmaller scale: Bool) -> UIImage {
+        guard let reference = CGImage else {
+            return self
+        }
+        var bounding      = size
+        let width         = CGImageGetWidth(reference)
+        let height        = CGImageGetHeight(reference)
+        let referenceSize = CGSize(width: width, height: height)
+        
+        switch imageOrientation {
+        case .Left, .Right, .LeftMirrored, .RightMirrored:
+            bounding = CGSize(width: size.height, height: size.width)
+        default:
+            break
+        }
+        
+        let toSize:CGSize
+        if !scale && (referenceSize.width < bounding.width) && (referenceSize.height < bounding.height) {
+            toSize = referenceSize
+        } else {
+            let ratio = ((bounding.width / referenceSize.width), (bounding.height / referenceSize.height))
+            let width:CGFloat
+            let height:CGFloat
+            
+            if ratio.0 < ratio.1 {
+                width   = bounding.width
+                height  = CGFloat(floorf(Float(referenceSize.height) * Float(ratio.0)))
+            } else {
+                width   = CGFloat(floorf(Float(referenceSize.width) * Float(ratio.1)))
+                height  = bounding.height
+            }
+            
+            toSize = CGSize(width: width, height: height)
+        }
+        
+        return resize(to: toSize)
     }
 }
 
