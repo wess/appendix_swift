@@ -9,22 +9,22 @@
 import Foundation
 
 public extension UILabel {
-    
-    public func suggestedSize(width:Float) -> CGSize {
-        return suggestedSize(string: self.text ?? "", width: width)
+  
+  public func suggestedSize(width:Float) -> CGSize {
+    return suggestedSize(string: self.text ?? "", width: width)
+  }
+  
+  public func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
+    if string.length < 1 {
+      return .zero
     }
     
-    public func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
-        if string.length < 1 {
-            return .zero
-        }
-        
-        return self.font.size(of: string.string, constrainedToWidth: Double(width))
-    }
-    
-    public func suggestedSize(string:String, width:Float) -> CGSize {
-        return suggestedSize(attributedString: NSAttributedString(string: string), width: width)
-    }
+    return self.font.size(of: string.string, constrainedToWidth: Double(width))
+  }
+  
+  public func suggestedSize(string:String, width:Float) -> CGSize {
+    return suggestedSize(attributedString: NSAttributedString(string: string), width: width)
+  }
 }
 
 
