@@ -13,7 +13,7 @@ public extension Dictionary {
   
   public init(json string:String) {
     if let data = string.data(using: String.Encoding.utf8) {
-      self = Dictionary(json: data as! NSData)
+      self = Dictionary(json: data as NSData)
     }
     
     self = [:]

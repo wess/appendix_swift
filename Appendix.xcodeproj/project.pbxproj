@@ -1,273 +1,461 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		__src_cc_ref_Sources/Appendix.swift /* Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Appendix.swift /* Appendix.swift */; };
-		"__src_cc_ref_Sources/Array+Appendix.swift" /* Array+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Array+Appendix.swift" /* Array+Appendix.swift */; };
-		"__src_cc_ref_Sources/CGAffineTransform+Appendix.swift" /* CGAffineTransform+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/CGAffineTransform+Appendix.swift" /* CGAffineTransform+Appendix.swift */; };
-		"__src_cc_ref_Sources/CGRect+Appendix.swift" /* CGRect+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/CGRect+Appendix.swift" /* CGRect+Appendix.swift */; };
-		"__src_cc_ref_Sources/Date+Appendix.swift" /* Date+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Date+Appendix.swift" /* Date+Appendix.swift */; };
-		"__src_cc_ref_Sources/Dictionary+Appendix.swift" /* Dictionary+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Dictionary+Appendix.swift" /* Dictionary+Appendix.swift */; };
-		"__src_cc_ref_Sources/Dispatch+Appendix.swift" /* Dispatch+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Dispatch+Appendix.swift" /* Dispatch+Appendix.swift */; };
-		"__src_cc_ref_Sources/Int+Appendix.swift" /* Int+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/Int+Appendix.swift" /* Int+Appendix.swift */; };
-		"__src_cc_ref_Sources/NSNumberFormatter+Appendix.swift" /* NSNumberFormatter+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift" /* NSNumberFormatter+Appendix.swift */; };
-		"__src_cc_ref_Sources/NSURL+Appendix.swift" /* NSURL+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/NSURL+Appendix.swift" /* NSURL+Appendix.swift */; };
-		"__src_cc_ref_Sources/String+Appendix.swift" /* String+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/String+Appendix.swift" /* String+Appendix.swift */; };
-		"__src_cc_ref_Sources/UIColor+Appendix.swift" /* UIColor+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UIColor+Appendix.swift" /* UIColor+Appendix.swift */; };
-		"__src_cc_ref_Sources/UIFont+Appendix.swift" /* UIFont+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UIFont+Appendix.swift" /* UIFont+Appendix.swift */; };
-		"__src_cc_ref_Sources/UIImage+Appendix.swift" /* UIImage+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UIImage+Appendix.swift" /* UIImage+Appendix.swift */; };
-		"__src_cc_ref_Sources/UILabel+Appendix.swift" /* UILabel+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UILabel+Appendix.swift" /* UILabel+Appendix.swift */; };
-		"__src_cc_ref_Sources/UINavigationController+Appendix.swift" /* UINavigationController+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UINavigationController+Appendix.swift" /* UINavigationController+Appendix.swift */; };
-		"__src_cc_ref_Sources/UITableView+Appendix.swift" /* UITableView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UITableView+Appendix.swift" /* UITableView+Appendix.swift */; };
-		"__src_cc_ref_Sources/UITextView+Appendix.swift" /* UITextView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UITextView+Appendix.swift" /* UITextView+Appendix.swift */; };
-		"__src_cc_ref_Sources/UIView+Appendix.swift" /* UIView+Appendix.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Sources/UIView+Appendix.swift" /* UIView+Appendix.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig /* Appendix.xcodeproj/Configs/Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Appendix.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
-		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Sources/Appendix.swift /* Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appendix.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/Array+Appendix.swift" /* Array+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/CGAffineTransform+Appendix.swift" /* CGAffineTransform+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTransform+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/CGRect+Appendix.swift" /* CGRect+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/Date+Appendix.swift" /* Date+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/Dictionary+Appendix.swift" /* Dictionary+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/Dispatch+Appendix.swift" /* Dispatch+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dispatch+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/Int+Appendix.swift" /* Int+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift" /* NSNumberFormatter+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumberFormatter+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/NSURL+Appendix.swift" /* NSURL+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSURL+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/String+Appendix.swift" /* String+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UIColor+Appendix.swift" /* UIColor+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UIFont+Appendix.swift" /* UIFont+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UIImage+Appendix.swift" /* UIImage+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UILabel+Appendix.swift" /* UILabel+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UINavigationController+Appendix.swift" /* UINavigationController+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UITableView+Appendix.swift" /* UITableView+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UITextView+Appendix.swift" /* UITextView+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Appendix.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Sources/UIView+Appendix.swift" /* UIView+Appendix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Appendix.swift"; sourceTree = "<group>"; };
-		"_____Product_Appendix" /* Appendix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Appendix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		"___LinkPhase_Appendix" /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		"___RootGroup_" = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				"_____Configs_" /* Configs */,
-				"_____Sources_" /* Sources */,
-				"____Products_" /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		"____Products_" /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"_____Product_Appendix" /* Appendix.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		"_____Configs_" /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig /* Appendix.xcodeproj/Configs/Project.xcconfig */,
-			);
-			name = Configs;
-			sourceTree = "<group>";
-		};
-		"_____Sources_" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				"_______Group_Appendix" /* Appendix */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-		"_______Group_Appendix" /* Appendix */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Sources/Appendix.swift /* Appendix.swift */,
-				"__PBXFileRef_Sources/Array+Appendix.swift" /* Array+Appendix.swift */,
-				"__PBXFileRef_Sources/CGAffineTransform+Appendix.swift" /* CGAffineTransform+Appendix.swift */,
-				"__PBXFileRef_Sources/CGRect+Appendix.swift" /* CGRect+Appendix.swift */,
-				"__PBXFileRef_Sources/Date+Appendix.swift" /* Date+Appendix.swift */,
-				"__PBXFileRef_Sources/Dictionary+Appendix.swift" /* Dictionary+Appendix.swift */,
-				"__PBXFileRef_Sources/Dispatch+Appendix.swift" /* Dispatch+Appendix.swift */,
-				"__PBXFileRef_Sources/Int+Appendix.swift" /* Int+Appendix.swift */,
-				"__PBXFileRef_Sources/NSNumberFormatter+Appendix.swift" /* NSNumberFormatter+Appendix.swift */,
-				"__PBXFileRef_Sources/NSURL+Appendix.swift" /* NSURL+Appendix.swift */,
-				"__PBXFileRef_Sources/String+Appendix.swift" /* String+Appendix.swift */,
-				"__PBXFileRef_Sources/UIColor+Appendix.swift" /* UIColor+Appendix.swift */,
-				"__PBXFileRef_Sources/UIFont+Appendix.swift" /* UIFont+Appendix.swift */,
-				"__PBXFileRef_Sources/UIImage+Appendix.swift" /* UIImage+Appendix.swift */,
-				"__PBXFileRef_Sources/UILabel+Appendix.swift" /* UILabel+Appendix.swift */,
-				"__PBXFileRef_Sources/UINavigationController+Appendix.swift" /* UINavigationController+Appendix.swift */,
-				"__PBXFileRef_Sources/UITableView+Appendix.swift" /* UITableView+Appendix.swift */,
-				"__PBXFileRef_Sources/UITextView+Appendix.swift" /* UITextView+Appendix.swift */,
-				"__PBXFileRef_Sources/UIView+Appendix.swift" /* UIView+Appendix.swift */,
-			);
-			name = Appendix;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		"______Target_Appendix" /* Appendix */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_Appendix" /* Build configuration list for PBXNativeTarget "Appendix" */;
-			buildPhases = (
-				CompilePhase_Appendix /* Sources */,
-				"___LinkPhase_Appendix" /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Appendix;
-			productName = Appendix;
-			productReference = "_____Product_Appendix" /* Appendix.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		__RootObject_ /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 9999;
-			};
-			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "Appendix" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = "___RootGroup_";
-			productRefGroup = "____Products_" /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				"______Target_Appendix" /* Appendix */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CompilePhase_Appendix /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				__src_cc_ref_Sources/Appendix.swift /* Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/Array+Appendix.swift" /* Array+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/CGAffineTransform+Appendix.swift" /* CGAffineTransform+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/CGRect+Appendix.swift" /* CGRect+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/Date+Appendix.swift" /* Date+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/Dictionary+Appendix.swift" /* Dictionary+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/Dispatch+Appendix.swift" /* Dispatch+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/Int+Appendix.swift" /* Int+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/NSNumberFormatter+Appendix.swift" /* NSNumberFormatter+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/NSURL+Appendix.swift" /* NSURL+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/String+Appendix.swift" /* String+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UIColor+Appendix.swift" /* UIColor+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UIFont+Appendix.swift" /* UIFont+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UIImage+Appendix.swift" /* UIImage+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UILabel+Appendix.swift" /* UILabel+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UINavigationController+Appendix.swift" /* UINavigationController+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UITableView+Appendix.swift" /* UITableView+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UITextView+Appendix.swift" /* UITextView+Appendix.swift in Sources */,
-				"__src_cc_ref_Sources/UIView+Appendix.swift" /* UIView+Appendix.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		_ReleaseConf_Appendix /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = Appendix.xcodeproj/Appendix_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Appendix;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		"___DebugConf_Appendix" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = Appendix.xcodeproj/Appendix_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Appendix;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		"_____Release_" /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig /* Appendix.xcodeproj/Configs/Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		"_______Debug_" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_Appendix.xcodeproj/Configs/Project.xcconfig /* Appendix.xcodeproj/Configs/Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		"___RootConfs_" /* Build configuration list for PBXProject "Appendix" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"_______Debug_" /* Debug */,
-				"_____Release_" /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		"_______Confs_Appendix" /* Build configuration list for PBXNativeTarget "Appendix" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"___DebugConf_Appendix" /* Debug */,
-				_ReleaseConf_Appendix /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = __RootObject_ /* Project object */;
+   archiveVersion = "1";
+   objectVersion = "46";
+   objects = {
+      OBJ_1 = {
+         isa = "PBXProject";
+         attributes = {
+            LastUpgradeCheck = "9999";
+         };
+         buildConfigurationList = OBJ_2;
+         compatibilityVersion = "Xcode 3.2";
+         developmentRegion = "English";
+         hasScannedForEncodings = "0";
+         knownRegions = (
+            "en",
+         );
+         mainGroup = OBJ_5;
+         productRefGroup = OBJ_30;
+         projectDirPath = ".";
+         targets = (
+            OBJ_32,
+         );
+      };
+      OBJ_10 = {
+         isa = "PBXFileReference";
+         path = "Array+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_11 = {
+         isa = "PBXFileReference";
+         path = "CGAffineTransform+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_12 = {
+         isa = "PBXFileReference";
+         path = "CGRect+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_13 = {
+         isa = "PBXFileReference";
+         path = "Date+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_14 = {
+         isa = "PBXFileReference";
+         path = "Dictionary+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_15 = {
+         isa = "PBXFileReference";
+         path = "Dispatch+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_16 = {
+         isa = "PBXFileReference";
+         path = "Int+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_17 = {
+         isa = "PBXFileReference";
+         path = "NSAttributedString+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_18 = {
+         isa = "PBXFileReference";
+         path = "NSNumberFormatter+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_19 = {
+         isa = "PBXFileReference";
+         path = "NSURL+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_2 = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            OBJ_3,
+            OBJ_4,
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Debug";
+      };
+      OBJ_20 = {
+         isa = "PBXFileReference";
+         path = "String+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_21 = {
+         isa = "PBXFileReference";
+         path = "UIColor+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_22 = {
+         isa = "PBXFileReference";
+         path = "UIFont+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_23 = {
+         isa = "PBXFileReference";
+         path = "UIImage+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_24 = {
+         isa = "PBXFileReference";
+         path = "UILabel+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_25 = {
+         isa = "PBXFileReference";
+         path = "UINavigationController+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_26 = {
+         isa = "PBXFileReference";
+         path = "UITableView+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_27 = {
+         isa = "PBXFileReference";
+         path = "UITextView+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_28 = {
+         isa = "PBXFileReference";
+         path = "UIView+Appendix.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_29 = {
+         isa = "PBXGroup";
+         children = (
+         );
+         path = "Tests";
+         sourceTree = "<group>";
+      };
+      OBJ_3 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "NO";
+            DEBUG_INFORMATION_FORMAT = "dwarf";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            ENABLE_NS_ASSERTIONS = "YES";
+            GCC_OPTIMIZATION_LEVEL = "0";
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            ONLY_ACTIVE_ARCH = "YES";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode",
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator",
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Debug";
+      };
+      OBJ_30 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_31,
+         );
+         name = "Products";
+         path = "";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      OBJ_31 = {
+         isa = "PBXFileReference";
+         path = "Appendix.framework";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      OBJ_32 = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = OBJ_33;
+         buildPhases = (
+            OBJ_36,
+            OBJ_57,
+         );
+         dependencies = (
+         );
+         name = "Appendix";
+         productName = "Appendix";
+         productReference = OBJ_31;
+         productType = "com.apple.product-type.framework";
+      };
+      OBJ_33 = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            OBJ_34,
+            OBJ_35,
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Debug";
+      };
+      OBJ_34 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+            );
+            INFOPLIST_FILE = "Appendix.xcodeproj/Appendix_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "Appendix";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_VERSION = "3.0";
+            TARGET_NAME = "Appendix";
+         };
+         name = "Debug";
+      };
+      OBJ_35 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            ENABLE_TESTABILITY = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
+            );
+            HEADER_SEARCH_PATHS = (
+            );
+            INFOPLIST_FILE = "Appendix.xcodeproj/Appendix_Info.plist";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)",
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)",
+            );
+            PRODUCT_BUNDLE_IDENTIFIER = "Appendix";
+            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
+            SWIFT_VERSION = "3.0";
+            TARGET_NAME = "Appendix";
+         };
+         name = "Release";
+      };
+      OBJ_36 = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            OBJ_37,
+            OBJ_38,
+            OBJ_39,
+            OBJ_40,
+            OBJ_41,
+            OBJ_42,
+            OBJ_43,
+            OBJ_44,
+            OBJ_45,
+            OBJ_46,
+            OBJ_47,
+            OBJ_48,
+            OBJ_49,
+            OBJ_50,
+            OBJ_51,
+            OBJ_52,
+            OBJ_53,
+            OBJ_54,
+            OBJ_55,
+            OBJ_56,
+         );
+      };
+      OBJ_37 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_9;
+      };
+      OBJ_38 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_10;
+      };
+      OBJ_39 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_11;
+      };
+      OBJ_4 = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            COMBINE_HIDPI_IMAGES = "YES";
+            COPY_PHASE_STRIP = "YES";
+            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+            DYLIB_INSTALL_NAME_BASE = "@rpath";
+            GCC_OPTIMIZATION_LEVEL = "s";
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_SWIFT_FLAGS = (
+               "-DXcode",
+            );
+            PRODUCT_NAME = "$(TARGET_NAME)";
+            SUPPORTED_PLATFORMS = (
+               "macosx",
+               "iphoneos",
+               "iphonesimulator",
+               "appletvos",
+               "appletvsimulator",
+               "watchos",
+               "watchsimulator",
+            );
+            SWIFT_OPTIMIZATION_LEVEL = "-O";
+            USE_HEADERMAP = "NO";
+         };
+         name = "Release";
+      };
+      OBJ_40 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_12;
+      };
+      OBJ_41 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_13;
+      };
+      OBJ_42 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_14;
+      };
+      OBJ_43 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_15;
+      };
+      OBJ_44 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_16;
+      };
+      OBJ_45 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_17;
+      };
+      OBJ_46 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_18;
+      };
+      OBJ_47 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_19;
+      };
+      OBJ_48 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_20;
+      };
+      OBJ_49 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_21;
+      };
+      OBJ_5 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_6,
+            OBJ_7,
+            OBJ_29,
+            OBJ_30,
+         );
+         path = "";
+         sourceTree = "<group>";
+      };
+      OBJ_50 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_22;
+      };
+      OBJ_51 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_23;
+      };
+      OBJ_52 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_24;
+      };
+      OBJ_53 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_25;
+      };
+      OBJ_54 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_26;
+      };
+      OBJ_55 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_27;
+      };
+      OBJ_56 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_28;
+      };
+      OBJ_57 = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      OBJ_6 = {
+         isa = "PBXFileReference";
+         explicitFileType = "sourcecode.swift";
+         path = "Package.swift";
+         sourceTree = "<group>";
+      };
+      OBJ_7 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_8,
+         );
+         path = "Sources";
+         sourceTree = "<group>";
+      };
+      OBJ_8 = {
+         isa = "PBXGroup";
+         children = (
+            OBJ_9,
+            OBJ_10,
+            OBJ_11,
+            OBJ_12,
+            OBJ_13,
+            OBJ_14,
+            OBJ_15,
+            OBJ_16,
+            OBJ_17,
+            OBJ_18,
+            OBJ_19,
+            OBJ_20,
+            OBJ_21,
+            OBJ_22,
+            OBJ_23,
+            OBJ_24,
+            OBJ_25,
+            OBJ_26,
+            OBJ_27,
+            OBJ_28,
+         );
+         name = "Appendix";
+         path = "Sources";
+         sourceTree = "SOURCE_ROOT";
+      };
+      OBJ_9 = {
+         isa = "PBXFileReference";
+         path = "Appendix.swift";
+         sourceTree = "<group>";
+      };
+   };
+   rootObject = OBJ_1;
 }

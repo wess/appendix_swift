@@ -11,15 +11,15 @@ import Foundation
 public extension NSAttributedString {
   public var bold:NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of: string)
-
+    let range       = NSMakeRange(0, string.length)
+    
     copy.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)], range: range)
     return copy
   }
 
   public var underline: NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of: string)
+    let range       = NSMakeRange(0, string.length)
 
     copy.addAttributes([NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue], range: range)
     return copy
@@ -27,7 +27,7 @@ public extension NSAttributedString {
 
   public var italic: NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of: string)
+    let range       = NSMakeRange(0, string.length)
 
     copy.addAttributes([NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)], range: range)
     return copy
@@ -35,7 +35,7 @@ public extension NSAttributedString {
 
   public var strikethrough: NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of: string)
+    let range       = NSMakeRange(0, string.length)
     let attributes  = [NSStrikethroughStyleAttributeName: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)]
 
     copy.addAttributes(attributes, range: range)
@@ -46,7 +46,7 @@ public extension NSAttributedString {
 public extension NSAttributedString {
   public func color(_ color:UIColor) -> NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of: string)
+    let range       = NSMakeRange(0, string.length)
 
     copy.addAttributes([NSForegroundColorAttributeName: color], range: range)
     return copy
