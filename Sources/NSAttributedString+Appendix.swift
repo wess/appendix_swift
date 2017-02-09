@@ -11,7 +11,7 @@ import Foundation
 public extension NSAttributedString {
   public var bold:NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
-    let range       = (string as NSString).range(of string)
+    let range       = (string as NSString).range(of: string)
 
     copy.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)], range: range)
     return copy
