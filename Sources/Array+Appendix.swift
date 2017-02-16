@@ -23,36 +23,6 @@ public extension Array {
     return position < count ? self[position] : nil
   }
   
-  public func indexOf (condition: (Element) -> Bool) -> Int? {
-    for (index, element) in self.enumerated() {
-      if condition(element) {
-        return index
-      }
-    }
-    
-    return nil
-  }
-  
-  public func indexOf <U: Equatable> (item: U) -> Int? {
-    if item is Element {
-      return unsafeBitCast(self, to: [U].self).index(of: item)
-    }
-    
-    return nil
-  }
-  
-  
-  public func all (test: (Element) -> Bool) -> Bool {
-    for item in self {
-      if !test(item) {
-        return false
-      }
-    }
-    
-    return true
-  }
-  
-  
   public func difference<T: Equatable>(values: [T]...) -> [T] {
     var result = [T]()
     
@@ -70,19 +40,7 @@ public extension Array {
     
     return result
   }
-  
-  public func filter(handler:(Element) -> Bool) -> Array {
-    var result = [Element]()
-    
-    for item in self {
-      if handler(item) {
-        result.append(item)
-      }
-    }
-    
-    return result
-  }
-}
+ }
 
 
 public func - <T: Equatable> (first: Array<T>, second: T) -> Array<T> {

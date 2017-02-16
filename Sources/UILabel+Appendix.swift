@@ -10,8 +10,8 @@ import Foundation
 
 public extension UILabel {
   
-  public func suggestedSize(width:Float) -> CGSize {
-    return suggestedSize(string: self.text ?? "", width: width)
+  public func suggestedSize(for width:Float) -> CGSize {
+    return suggestedSize(of:text ?? "", for: width)
   }
   
   public func suggestedSize(attributedString string:NSAttributedString, width:Float) -> CGSize {
@@ -22,7 +22,7 @@ public extension UILabel {
     return self.font.size(of: string.string, constrainedToWidth: Double(width))
   }
   
-  public func suggestedSize(string:String, width:Float) -> CGSize {
+  public func suggestedSize(of string:String, for width:Float) -> CGSize {
     return suggestedSize(attributedString: NSAttributedString(string: string), width: width)
   }
 }

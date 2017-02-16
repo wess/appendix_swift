@@ -81,11 +81,11 @@ public extension UIColor {
     var brightness:CGFloat  = 0
     var alpha:CGFloat       = 0
 
-    if color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+    if getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
       return UIColor(hue: hue, saturation: saturation, brightness: (brightness * amount), alpha: alpha)
     }
 
-  return color
+  return self
 
   }
 
