@@ -3,7 +3,7 @@
 //  Appendix
 //
 //  Created by Wesley Cope on 8/10/15.
-//  Copyright © 2015 Wess Cope. All rights reserved.
+//  Copyright © 2017 Wess Cope. All rights reserved.
 //
 
 import Foundation
@@ -42,7 +42,7 @@ public struct Environment {
 
 public typealias Env = Environment
 
-public func sync(target:AnyObject, block:((Void)->Void)) {
+public func sync(target:AnyObject, block:(()->Void)) {
   objc_sync_enter(target)
   defer { objc_sync_exit(target) }
   

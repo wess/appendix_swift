@@ -4,7 +4,7 @@
 //  Appendix
 //
 //  Created by Wesley Cope on 7/28/15.
-//  Copyright © 2015 Wess Cope. All rights reserved.
+//  Copyright © 2017 Wess Cope. All rights reserved.
 //
 
 import Foundation

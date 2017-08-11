@@ -3,7 +3,7 @@
 //  Appendix
 //
 //  Created by Wesley Cope on 7/28/15.
-//  Copyright © 2015 Wess Cope. All rights reserved.
+//  Copyright © 2017 Wess Cope. All rights reserved.
 //
 
 import Foundation
@@ -49,7 +49,7 @@ public extension Dictionary {
   
   public func jsonString() -> String? {
     if let data = self.jsonData() {
-      if let str = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as? String {
+      if let str = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as String? {
         return str
       }
     }

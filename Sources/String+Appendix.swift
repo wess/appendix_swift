@@ -3,7 +3,7 @@
 //  Appendix
 //
 //  Created by Wesley Cope on 6/29/15.
-//  Copyright (c) 2015 Wess Cope. All rights reserved.
+//  Copyright (c) 2017 Wess Cope. All rights reserved.
 //
 
 import Foundation
@@ -44,14 +44,14 @@ public extension String {
 public extension String /* Size */ {
   public func sizeConstrainted(to width:CGFloat, font:UIFont) -> CGSize {
     let string  = NSString(string: self)
-    let bounds  = string.boundingRect(with: CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSFontAttributeName: font], context: nil)
+    let bounds  = string.boundingRect(with: CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSAttributedStringKey.font: font], context: nil)
     
     return bounds.size
   }
   
   public func sizeConstrainted(to size:CGSize, font:UIFont) -> CGSize {
     let string  = NSString(string: self)
-    let bounds  = string.boundingRect(with: size, options: [], attributes: [NSFontAttributeName: font], context: nil)
+    let bounds  = string.boundingRect(with: size, options: [], attributes: [NSAttributedStringKey.font: font], context: nil)
     
     return bounds.size
   }
@@ -71,7 +71,7 @@ public extension String /* Formatting  */ {
       scanner.scanUpTo("<", into: nil)
       scanner.scanUpTo(">", into: &text)
       
-      if let replaceText = text as? String {
+      if let replaceText = text as String? {
         html = html.replacingOccurrences(of: "\(replaceText)>", with: "")
       }
     }

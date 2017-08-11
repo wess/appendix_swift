@@ -3,7 +3,7 @@
 //  Appendix
 //
 //  Created by Wesley Cope on 6/29/15.
-//  Copyright (c) 2015 Wess Cope. All rights reserved.
+//  Copyright (c) 2017 Wess Cope. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import UIKit
 import QuartzCore
 
 func RadiansFromDegrees(degrees:Float) -> Float {
-  return degrees * Float(M_PI) / 180
+  return degrees * Float(Double.pi) / 180
 }
 
 public extension UIView {
