@@ -9,6 +9,11 @@
 import Foundation
 
 public extension UIFont {
+
+  convenience init(_ name:String, _ size:CGFloat) {
+    self.init(descriptor: UIFontDescriptor(name: name, size: size), size: 0)
+  }
+
   public func size(of string: String, constrainedToWidth width: Double) -> CGSize {
     return (string as NSString).boundingRect(with: CGSize(width: width, height: DBL_MAX),
                                              options: NSStringDrawingOptions.usesLineFragmentOrigin,

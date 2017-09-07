@@ -102,6 +102,16 @@ public extension Dictionary {
     
     return result
   }
+  
+  public func merge(_ dict:Dictionary) -> Dictionary {
+    var this = self
+    
+    for (k,v) in dict {
+      this.updateValue(v, forKey: k)
+    }
+    
+    return this
+  }
 }
 
 
@@ -113,4 +123,8 @@ public func += <K, V>( lhs:inout [K:V], rhs:[K:V]) {
   for (k,v) in rhs {
     lhs.updateValue(v, forKey: k)
   }
+}
+
+func + <K,V>(lhs:[K:V], rhs:[K:V]) -> [K:V] {
+  return lhs.merge(rhs)
 }

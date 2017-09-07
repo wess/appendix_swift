@@ -59,3 +59,10 @@ public func += (lhs:inout NSAttributedString, rhs:NSAttributedString) {
 
   lhs = mutant
 }
+
+public func + (lhs:NSAttributedString, rhs:NSAttributedString) -> NSAttributedString {
+  let mutant = NSMutableAttributedString(attributedString: lhs)
+  mutant.append(rhs)
+
+  return NSAttributedString(attributedString: mutant)
+}

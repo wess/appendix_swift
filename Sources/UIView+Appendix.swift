@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 import QuartzCore
 
+public enum UIViewBorder {
+  case top(CGFloat, UIColor)
+  case right(CGFloat, UIColor)
+  case bottom(CGFloat, UIColor)
+  case left(CGFloat, UIColor)
+}
+
 func RadiansFromDegrees(degrees:Float) -> Float {
   return degrees * Float(M_PI) / 180
 }
@@ -153,7 +160,58 @@ public extension UIView {
     }
     
     set {
+      
       self.layer.borderColor = (newValue as UIColor).cgColor
+    }
+  }
+
+  public var shadowOpacity:CGFloat {
+    get {
+      return CGFloat(self.layer.shadowOpacity)
+    }
+    
+    set {
+      self.layer.shadowOpacity = Float(newValue)
+    }
+  }
+  
+  public var shadowColor:UIColor? {
+    get {
+      return self.layer.shadowColor == nil ? UIColor(cgColor: self.layer.shadowColor!) : nil
+    }
+    
+    set {
+      self.layer.shadowColor = newValue == nil ? nil : newValue!.cgColor
+    }
+  }
+
+  public var shadowOffset:CGSize {
+    get {
+      return self.layer.shadowOffset
+    }
+    
+    set {
+      self.layer.shadowOffset = newValue
+    }
+  }
+  
+  public var shadowRadius:CGFloat {
+    get {
+      return self.layer.shadowRadius
+    }
+    
+    set {
+      self.layer.shadowRadius = newValue
+    }
+  }
+  
+  public var shadowPath:CGPath? {
+    get {
+      return self.layer.shadowPath
+    }
+    
+    set {
+      self.layer.shadowPath = newValue
     }
   }
   
@@ -182,6 +240,61 @@ public extension UIView {
     }
   }
   
+  public func addBorders(_ borders:[UIViewBorder]) {
+    borders.forEach(addBorder(_ :))
+  }
+  
+  public func addBorder(_ border:UIViewBorder) {
+    
+    let size:CGFloat
+    let color:UIColor
+    let x:CGFloat
+    let y:CGFloat
+    let width:CGFloat
+    let height:CGFloat
+    
+    switch border {
+    case .top(let s, let c):
+      size    = s
+      color   = c
+      x       = 0
+      y       = 0
+      width   = frame.width
+      height  = size
+      break
+    case .right(let s, let c):
+      size    = s
+      color   = c
+      x       = frame.width - size
+      y       = 0
+      width   = size
+      height  = frame.height
+      break
+    case .bottom(let s, let c):
+      size    = s
+      color   = c
+      x       = 0
+      y       = frame.height - size
+      width   = frame.width
+      height  = size
+      break
+    case .left(let s, let c):
+      size    = s
+      color   = c
+      x       = 0
+      y       = 0
+      width   = size
+      height  = frame.height
+      break
+    }
+    
+    let borderLayer             = CALayer()
+    borderLayer.backgroundColor = color.cgColor
+    borderLayer.frame           = CGRect(x: x, y: y, width: width, height: height)
+    
+    layer.addSublayer(borderLayer)
+  }
+  
   public func rotate(degrees:Float, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
     UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: { () -> Void in
       self.transform = self.transform.rotated(by: CGFloat(RadiansFromDegrees(degrees: degrees)))
@@ -193,10 +306,63 @@ public extension UIView {
       self.transform = self.transform.scaledBy(x: offset.x, y: offset.y)
     }, completion: completion)
   }
+  
+  @discardableResult
+  public func addSubviews(_ subviews:[UIView]) -> UIView {
+    subviews.forEach(addSubview)
+    
+    return self
+  }
+
+  @discardableResult
+  public func addSubviews(_ args:UIView...) -> UIView {
+    args.forEach(addSubview)
+    
+    return self
+  }
 }
 
+fileprivate struct UIViewAnimationDefaults {
+  static let Duration:TimeInterval  = 1
+  static let Damping:CGFloat        = 0.5
+  static let Velocity:CGFloat       = 0.5
+}
 
+extension UIView /* Animations */ {
+  public func shake(_ times:Int) {
+    let keyframe          = CAKeyframeAnimation(keyPath: "transform")
+    keyframe.autoreverses = true
+    keyframe.repeatCount  = Float(times)
+    keyframe.duration     = 7/100
+    
+    keyframe.values = [
+      NSValue(caTransform3D: CATransform3DMakeTranslation(-5, 0, 0 )),
+      NSValue(caTransform3D: CATransform3DMakeTranslation( 5, 0, 0 ))
+    ]
+    
+    self.layer.add(keyframe, forKey: nil)
+  }
+  
+  public func spring(animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) {
+    spring(duration: UIViewAnimationDefaults.Duration, animations: animations, completion: completion)
+  }
+  
+  public func spring(duration: TimeInterval, animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) {
+    UIView.animate(
+      withDuration:  UIViewAnimationDefaults.Duration,
+      delay: 0,
+      usingSpringWithDamping: UIViewAnimationDefaults.Damping,
+      initialSpringVelocity:  UIViewAnimationDefaults.Velocity,
+      options: UIViewAnimationOptions.allowAnimatedContent,
+      animations: animations,
+      completion: completion
+    )
+  }
+}
 
+fileprivate class GestureRecognizerHandler {
+  
+}
 
 
 

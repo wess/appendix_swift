@@ -30,14 +30,101 @@ public func formatString(string:String, pattern:String, maskCharacter character:
   return result.joined(separator: "").replacingOccurrences(of: character, with: placeholder)
 }
 
+public extension String /* Init */ {
+  init?(base64:String) {
+    let padding = String(repeating: "=", count: base64.length % 4)
+    let padded  = base64 + padding
+    
+    guard let decoded   = Data(base64Encoded: padded, options: .ignoreUnknownCharacters),
+          let deString  = String(data: decoded, encoding: .utf8) else {
+        return nil
+    }
 
-public extension String {
+    self.init(deString)
+  }
+}
+
+public extension String /* Helper Vars */ {
+  public var base64Encoded:String {
+    return self.data(using: .utf8)!.base64EncodedString()
+  }
+  
   public var length: Int {
     return self.characters.count
   }
   
+  public var trimmed:String {
+    return trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+  
+  public var urlEncoded:String {
+    return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+  }
+  
+  public var urlDecoded:String {
+    return removingPercentEncoding ?? self
+  }
+  
+  public var intValue:Int? {
+    guard let num = NumberFormatter().number(from: self) else { return nil }
+    
+    return num.intValue
+  }
+  
+  public var floatValue:Float? {
+    guard let num = NumberFormatter().number(from: self) else { return nil }
+    
+    return num.floatValue
+  }
+
+  public var doubleValue:Double? {
+    guard let num = NumberFormatter().number(from: self) else { return nil }
+    
+    return num.doubleValue
+  }
+  
+  public var empty:Bool {
+    return trimmed.isEmpty
+  }
+  
+  public var boolValue:Bool? {
+    let me = trimmed.lowercased()
+    if me == "true" {
+      return true
+    }
+    
+    if me == "false" {
+      return false
+    }
+    
+    return nil
+  }
+}
+
+public extension String /* Manip */ {
+  public func split(_ separator:String) -> [String] {
+    return components(separatedBy: separator).filter {
+      !$0.trimmed.isEmpty
+    }
+  }
+  
   public func contains(_ str:String) -> Bool {
     return range(of: str) == nil ? false : true
+  }
+  
+  func replace(_ characters:String, with:String = "") -> String {
+    let charSet     = CharacterSet(charactersIn: characters)
+    let components  = self.components(separatedBy: charSet)
+    
+    return components.joined(separator: with)
+  }
+  
+  func remove(_ characters:String) -> String {
+    return self.replace(characters)
+  }
+  
+  func pasteboardCopy() {
+    UIPasteboard.general.strings = (UIPasteboard.general.strings ?? []) + [self]
   }
 }
 
@@ -96,6 +183,7 @@ public extension String /* Formatting  */ {
   }
 }
 
+
 public extension String /* Date */ {
   func date(format:String) -> Date? {
     let formatter           = DateFormatter()
@@ -132,14 +220,55 @@ public extension String /* Subscript */{
   }
 }
 
+public extension String /* URLS */ {
+  public enum StringDataType {
+    case link
+    case address
+    case dateTime
+    case phoneNumber
+    case none
+    
+    fileprivate var type:NSTextCheckingResult.CheckingType {
+      switch self {
+      case .link:
+        return NSTextCheckingResult.CheckingType.link
+      case .address:
+        return NSTextCheckingResult.CheckingType.address
+      case .dateTime:
+        return NSTextCheckingResult.CheckingType.date
+      case .phoneNumber:
+        return NSTextCheckingResult.CheckingType.phoneNumber
+      default:
+        return NSTextCheckingResult.CheckingType.init(rawValue: 0)
+      }
+    }
+    
+    fileprivate var raw:UInt64 {
+      return type.rawValue
+    }
+  }
 
+  public func detect(_ types:[StringDataType], handler:((Any?) -> ())) {
+    let dataTypes:NSTextCheckingResult.CheckingType = types.reduce(NSTextCheckingResult.CheckingType.init(rawValue: 0)) { (result, current) -> NSTextCheckingResult.CheckingType in
+      var _result = result
+      
+      _result.insert(current.type)
+      
+      return _result
+    }
+    
+    guard let detector:NSDataDetector = try? NSDataDetector(types: dataTypes.rawValue) else { return }
+    
+    let copy = self
+    detector.enumerateMatches(in: copy, options: [], range: NSMakeRange(0, self.length)) { result, flags, stop in
+      guard let result = result else { return }
 
-
-
-
-
-
-
-
-
-
+      handler(result.url ?? result.addressComponents ?? result.date ?? result.phoneNumber ?? nil)
+    }
+  }
+ 
+  public func detect(_ type:StringDataType, handler:((Any?) -> ())) {
+    detect([type], handler: handler)
+  }
+  
+}
