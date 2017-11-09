@@ -10,13 +10,6 @@ import Foundation
 import UIKit
 import QuartzCore
 
-public enum UIViewBorder {
-  case top(CGFloat, UIColor)
-  case right(CGFloat, UIColor)
-  case bottom(CGFloat, UIColor)
-  case left(CGFloat, UIColor)
-}
-
 func RadiansFromDegrees(degrees:Float) -> Float {
   return degrees * Float(M_PI) / 180
 }
@@ -238,61 +231,6 @@ public extension UIView {
       
       layer.addSublayer(gradLayer)
     }
-  }
-  
-  public func addBorders(_ borders:[UIViewBorder]) {
-    borders.forEach(addBorder(_ :))
-  }
-  
-  public func addBorder(_ border:UIViewBorder) {
-    
-    let size:CGFloat
-    let color:UIColor
-    let x:CGFloat
-    let y:CGFloat
-    let width:CGFloat
-    let height:CGFloat
-    
-    switch border {
-    case .top(let s, let c):
-      size    = s
-      color   = c
-      x       = 0
-      y       = 0
-      width   = frame.width
-      height  = size
-      break
-    case .right(let s, let c):
-      size    = s
-      color   = c
-      x       = frame.width - size
-      y       = 0
-      width   = size
-      height  = frame.height
-      break
-    case .bottom(let s, let c):
-      size    = s
-      color   = c
-      x       = 0
-      y       = frame.height - size
-      width   = frame.width
-      height  = size
-      break
-    case .left(let s, let c):
-      size    = s
-      color   = c
-      x       = 0
-      y       = 0
-      width   = size
-      height  = frame.height
-      break
-    }
-    
-    let borderLayer             = CALayer()
-    borderLayer.backgroundColor = color.cgColor
-    borderLayer.frame           = CGRect(x: x, y: y, width: width, height: height)
-    
-    layer.addSublayer(borderLayer)
   }
   
   public func rotate(degrees:Float, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
