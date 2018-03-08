@@ -13,13 +13,21 @@ public extension CGPoint {
     self.x = x
     self.y = y
   }
-  
-  public func with(x:CGFloat) -> CGPoint {
-    return CGPoint(x: x, y: y)
+
+  public init(x: CGFloat = 0, y: CGFloat = 0, width: CGFloat = 0, height: CGFloat = 0) {
+    self.init(origin: CGPoint(x: x, y: y), size: CGSize(width: width, height: height))
   }
   
-  public func with(y:CGFloat) -> CGPoint {
-    return CGPoint(x: x, y: y)
+  public init(x: CGFloat = 0, y: CGFloat = 0, size: CGSize) {
+    self.init(origin: CGPoint(x: x, y: y), size: size)
+  }
+  
+  public init(origin: CGPoint, width: CGFloat = 0, height: CGFloat = 0) {
+    self.init(origin: origin, size: CGSize(width: width, height: height))
+  }
+
+  public init(origin:CGPoint, size:CGSize) {
+    self.init(x: origin.x, y: origin.y, width: size.width, height: size.height)
   }
 }
 

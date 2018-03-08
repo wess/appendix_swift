@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import QuartzCore
 
-func RadiansFromDegrees(degrees:Float) -> Float {
+public func RadiansFromDegrees(degrees:Float) -> Float {
   return degrees * Float(M_PI) / 180
 }
 
@@ -258,6 +258,23 @@ public extension UIView {
     
     return self
   }
+  
+  @discardableResult
+  public func add(to:UIView) -> UIView {
+    to.addSubview(self)
+    
+    return self
+  }
+  
+  public func cycleConstraints() {
+    setNeedsUpdateConstraints()
+    updateConstraintsIfNeeded()
+  }
+  
+  public func cycleLayout() {
+    setNeedsLayout()
+    layoutIfNeeded()
+  }
 }
 
 fileprivate struct UIViewAnimationDefaults {
@@ -266,7 +283,7 @@ fileprivate struct UIViewAnimationDefaults {
   static let Velocity:CGFloat       = 0.5
 }
 
-extension UIView /* Animations */ {
+public extension UIView /* Animations */ {
   public func shake(_ times:Int) {
     let keyframe          = CAKeyframeAnimation(keyPath: "transform")
     keyframe.autoreverses = true
@@ -297,16 +314,3 @@ extension UIView /* Animations */ {
     )
   }
 }
-
-fileprivate class GestureRecognizerHandler {
-  
-}
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension CGSize {
+public extension CGSize {
   public init(_ size:CGFloat) {
     self.init(width: size, height: size)
   }

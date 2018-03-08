@@ -12,7 +12,7 @@ import Foundation
 public extension DispatchQueue {
   private static var onceTokens:[String] = []
   
-  public class func Once(_ token:String, callback:() -> ()) {
+  public class func once(_ token:String, callback:@escaping (() -> ())) {
     objc_sync_enter(self)
     defer { objc_sync_exit(self) }
     
@@ -22,5 +22,9 @@ public extension DispatchQueue {
     
     onceTokens.append(token)
     callback()
+  }
+  
+  public class func after(_ duration:TimeInterval, callback:@escaping (() -> Void)) {
+    DispatchQueue.main.asyncAfter(deadline: (.now() + duration), execute: callback)
   }
 }

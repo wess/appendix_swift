@@ -31,7 +31,7 @@ public func formatString(string:String, pattern:String, maskCharacter character:
 }
 
 public extension String /* Init */ {
-  init?(base64:String) {
+  public init?(base64:String) {
     let padding = String(repeating: "=", count: base64.length % 4)
     let padded  = base64 + padding
     
@@ -99,9 +99,19 @@ public extension String /* Helper Vars */ {
     
     return nil
   }
+  
+  public var format:((String...) -> String) {
+    return { (args:String...) in
+      return String(format:self, arguments:args)
+    }
+  }
 }
 
 public extension String /* Manip */ {
+  public func between(_ r:(Int, Int)) -> Bool {
+    return (self.length > r.0 && self.length < r.1)
+  }
+
   public func split(_ separator:String) -> [String] {
     return components(separatedBy: separator).filter {
       !$0.trimmed.isEmpty
@@ -112,18 +122,18 @@ public extension String /* Manip */ {
     return range(of: str) == nil ? false : true
   }
   
-  func replace(_ characters:String, with:String = "") -> String {
+  public func replace(_ characters:String, with:String = "") -> String {
     let charSet     = CharacterSet(charactersIn: characters)
     let components  = self.components(separatedBy: charSet)
     
     return components.joined(separator: with)
   }
   
-  func remove(_ characters:String) -> String {
+  public func remove(_ characters:String) -> String {
     return self.replace(characters)
   }
   
-  func pasteboardCopy() {
+  public func pasteboardCopy() {
     UIPasteboard.general.strings = (UIPasteboard.general.strings ?? []) + [self]
   }
 }
@@ -185,7 +195,7 @@ public extension String /* Formatting  */ {
 
 
 public extension String /* Date */ {
-  func date(format:String) -> Date? {
+  public func date(format:String) -> Date? {
     let formatter           = DateFormatter()
     formatter.dateFormat    = format
     
@@ -270,5 +280,16 @@ public extension String /* URLS */ {
   public func detect(_ type:StringDataType, handler:((Any?) -> ())) {
     detect([type], handler: handler)
   }
-  
+ 
+  // URL Helpers
+  public func toURLQuery() -> [String:Any] {
+    return self.components(separatedBy: "&").reduce([String:Any]()) { reduction, current in
+      let parts   = current.components(separatedBy: "=")
+      var result  = reduction
+      
+      result[parts.first!] = parts.last ?? ""
+      
+      return result
+    }
+  }
 }
