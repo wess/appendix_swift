@@ -15,7 +15,7 @@ public func +(left:CGAffineTransform, right:CGAffineTransform) -> CGAffineTransf
 }
 
 public extension CGAffineTransform {
-  public var isIdentity:Bool { return self.isIdentity }
+  var isIdentity:Bool { return self.isIdentity }
   
   public init(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) {
     self.init(a: CGFloat(a), b: CGFloat(b), c: CGFloat(c), d: CGFloat(d), tx: CGFloat(tx), ty: CGFloat(ty))

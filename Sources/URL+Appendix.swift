@@ -13,7 +13,7 @@ extension URL {
     return URLComponents(string: self.absoluteString)
   }
   
-  public var queryItems: [URLQueryItem] {
+  public var allQueryItems: [URLQueryItem] {
     get {
       guard let items = URLComponents(url: self, resolvingAgainstBaseURL: false)?.queryItems else {
         return []
@@ -23,18 +23,8 @@ extension URL {
     }
   }
 
-  public subscript(key:String) -> Any? {
-    get {
-      return queryItem(for: key)
-    }
-    
-    set {
-      append([key : newValue])
-    }
-  }
-  
   public func queryItems(for key: String) -> [URLQueryItem]? {
-    return queryItems.filter {$0.name == key}
+    return allQueryItems.filter {$0.name == key}
   }
 
   public func queryItem(for key: String) -> URLQueryItem? {
@@ -54,7 +44,12 @@ extension URL {
   }
   
   public func append(_ queryString: String = "") -> URL? {
-    return URL(string: (absoluteString + "?\(queryString)"))
+    
+    
+    
+    let urlString = absoluteString + "?\(queryString)"
+    
+    return URL(string: urlString)
   }
 }
 

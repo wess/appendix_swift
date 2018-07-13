@@ -125,6 +125,6 @@ public func += <K, V>( lhs:inout [K:V], rhs:[K:V]) {
   }
 }
 
-public func + <K,V>(lhs:[K:V], rhs:[K:V]) -> [K:V] {
+func + <K,V>(lhs:[K:V], rhs:[K:V]) -> [K:V] {
   return lhs.merge(rhs)
 }

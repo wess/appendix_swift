@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension CGPoint {
+extension CGPoint {
   public init(_ coord:CGFloat) {
     self.init(x: coord, y: coord)
   }

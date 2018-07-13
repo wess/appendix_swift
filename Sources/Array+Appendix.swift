@@ -40,7 +40,7 @@ public extension Array {
     
     return result
   }
-}
+ }
 
 
 public func - <T: Equatable> (first: Array<T>, second: T) -> Array<T> {
