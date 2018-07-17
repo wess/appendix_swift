@@ -53,6 +53,10 @@ public extension String /* Helper Vars */ {
     return self.characters.count
   }
   
+  public var lines:Int {
+    return self.split("\n").count
+  }
+  
   public var trimmed:String {
     return trimmingCharacters(in: .whitespacesAndNewlines)
   }
@@ -102,6 +106,10 @@ public extension String /* Helper Vars */ {
 }
 
 public extension String /* Manip */ {
+  public func join(_ components:[Any]) -> String {
+    return components.map { String(describing: $0) }.joined(separator: self)
+  }
+  
   public func split(_ separator:String) -> [String] {
     return components(separatedBy: separator).filter {
       !$0.trimmed.isEmpty

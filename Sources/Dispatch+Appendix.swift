@@ -9,10 +9,10 @@
 
 import Foundation
 
-public extension DispatchQueue {
+public struct Dispatch {
   private static var onceTokens:[String] = []
   
-  public class func Once(_ token:String, callback:() -> ()) {
+  public static func once(_ token:String, callback:() -> ()) {
     objc_sync_enter(self)
     defer { objc_sync_exit(self) }
     
@@ -22,5 +22,10 @@ public extension DispatchQueue {
     
     onceTokens.append(token)
     callback()
+  }
+  
+  public static func after(_ interval:TimeInterval, callback: @escaping (() -> Void)) {
+    let time = DispatchTime.now() + Double(Int64(interval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: time, execute: callback)
   }
 }

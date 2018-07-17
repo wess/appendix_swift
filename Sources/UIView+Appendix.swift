@@ -258,6 +258,29 @@ public extension UIView {
     
     return self
   }
+  
+  @discardableResult
+  public func add(to: UIView) -> UIView {
+    to.addSubview(self)
+    
+    return self
+  }
+  
+  @discardableResult
+  public func cycleLayout() -> UIView {
+    self.setNeedsLayout()
+    self.layoutIfNeeded()
+    
+    return self
+  }
+  
+  @discardableResult
+  public func cycleConstraints() -> UIView {
+    self.setNeedsUpdateConstraints()
+    self.updateConstraintsIfNeeded()
+    
+    return self
+  }
 }
 
 fileprivate struct UIViewAnimationDefaults {
