@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension UITableView {
   public func heightForCell(identifier:String, handler:((_ cell:AnyObject) -> Void)!) -> Float {

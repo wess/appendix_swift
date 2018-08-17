@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension CGPoint {
   public init(_ x: CGFloat, _ y: CGFloat) {

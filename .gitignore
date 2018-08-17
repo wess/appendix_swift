@@ -1,6 +1,7 @@
 # Xcode
 #
 build/
+.build
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -16,7 +17,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-
+*.xcodeproj
 Carthage/Build
 
 .DS_Store

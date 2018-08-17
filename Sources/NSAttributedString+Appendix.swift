@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 public extension NSAttributedString {
   public var bold:NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
     
-    copy.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)], range: range)
+    copy.addAttributes([NSAttributedStringKey.font : UIFont.systemFontSize], range: range)
     return copy
   }
 
@@ -21,7 +22,7 @@ public extension NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
 
-    copy.addAttributes([NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue], range: range)
+    copy.addAttributes([NSAttributedStringKey.font: NSUnderlineStyle.styleSingle.rawValue], range: range)
     return copy
   }
 

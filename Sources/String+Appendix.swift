@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 public func formatString(string:String, pattern:String, maskCharacter character:String = "#", placeholder:String = "") -> String {
   
-  let patternArray:[String]   = pattern.characters.map { String($0) }
-  let stringArray:[String]    = string.characters.map { String($0) }
+  let patternArray:[String]   = pattern.map { String($0) }
+  let stringArray:[String]    = string.map { String($0) }
   var result:[String]         = patternArray
   
   var current = 0
@@ -50,7 +51,7 @@ public extension String /* Helper Vars */ {
   }
   
   public var length: Int {
-    return self.characters.count
+    return self.count
   }
   
   public var lines:Int {
@@ -166,7 +167,7 @@ public extension String /* Formatting  */ {
       scanner.scanUpTo("<", into: nil)
       scanner.scanUpTo(">", into: &text)
       
-      if let replaceText = text as? String {
+      if let replaceText = text as String? {
         html = html.replacingOccurrences(of: "\(replaceText)>", with: "")
       }
     }

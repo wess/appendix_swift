@@ -23,6 +23,15 @@ extension URL {
     }
   }
 
+  public var params: [String:String]? {
+    return allQueryItems.reduce([String:String]()) {
+      var dict = $0
+      dict[$1.name] = $1.value
+      
+      return dict
+    }
+  }
+
   public func queryItems(for key: String) -> [URLQueryItem]? {
     return allQueryItems.filter {$0.name == key}
   }
@@ -44,9 +53,6 @@ extension URL {
   }
   
   public func append(_ queryString: String = "") -> URL? {
-    
-    
-    
     let urlString = absoluteString + "?\(queryString)"
     
     return URL(string: urlString)

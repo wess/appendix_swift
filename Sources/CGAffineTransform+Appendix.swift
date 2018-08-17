@@ -8,7 +8,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 public func +(left:CGAffineTransform, right:CGAffineTransform) -> CGAffineTransform {
   return left.concat(transform: right)

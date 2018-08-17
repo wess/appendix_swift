@@ -12,7 +12,7 @@ import Foundation
 /// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
 public struct Regex {
   // MARK: - Properties
-  private let regularExpression: NSRegularExpression
+  fileprivate let regularExpression: NSRegularExpression
   
   // MARK: - Initializers
   /// Create a `Regex` based on a pattern string.

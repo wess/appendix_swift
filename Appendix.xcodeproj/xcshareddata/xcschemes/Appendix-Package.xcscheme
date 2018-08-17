@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_31"
+               BlueprintIdentifier = "Appendix::Appendix"
                BuildableName = "Appendix.framework"
                BlueprintName = "Appendix"
                ReferencedContainer = "container:Appendix.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_31"
+            BlueprintIdentifier = "Appendix::Appendix"
             BuildableName = "Appendix.framework"
             BlueprintName = "Appendix"
             ReferencedContainer = "container:Appendix.xcodeproj">
