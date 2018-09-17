@@ -140,14 +140,14 @@ public extension String /* Manip */ {
 public extension String /* Size */ {
   public func sizeConstrainted(to width:CGFloat, font:UIFont) -> CGSize {
     let string  = NSString(string: self)
-    let bounds  = string.boundingRect(with: CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSAttributedStringKey.font: font], context: nil)
+    let bounds  = string.boundingRect(with: CGSize(width: width, height: CGFloat.infinity), options: [], attributes: [NSAttributedString.Key.font: font], context: nil)
     
     return bounds.size
   }
   
   public func sizeConstrainted(to size:CGSize, font:UIFont) -> CGSize {
     let string  = NSString(string: self)
-    let bounds  = string.boundingRect(with: size, options: [], attributes: [NSAttributedStringKey.font: font], context: nil)
+    let bounds  = string.boundingRect(with: size, options: [], attributes: [NSAttributedString.Key.font: font], context: nil)
     
     return bounds.size
   }

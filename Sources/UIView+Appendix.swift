@@ -314,7 +314,7 @@ extension UIView /* Animations */ {
       delay: 0,
       usingSpringWithDamping: UIViewAnimationDefaults.Damping,
       initialSpringVelocity:  UIViewAnimationDefaults.Velocity,
-      options: UIViewAnimationOptions.allowAnimatedContent,
+      options: UIView.AnimationOptions.allowAnimatedContent,
       animations: animations,
       completion: completion
     )

@@ -109,7 +109,7 @@ public extension CGAffineTransform {
 }
 
 extension CGAffineTransform : CustomStringConvertible {
-  public var description:String { return NSStringFromCGAffineTransform(self) }
+  public var description:String { return NSCoder.string(for: self) }
 }
 
 

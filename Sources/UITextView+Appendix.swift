@@ -30,7 +30,7 @@ public extension UITextView {
   
   public func rangeOfTextAtPoint(of text:String, at point:CGPoint) -> NSRange {
     let position    = self.closestPosition(to: point)
-    let textRange   = self.tokenizer.rangeEnclosingPosition(position!, with: .word, inDirection: 1)!
+    let textRange   = self.tokenizer.rangeEnclosingPosition(position!, with: .word, inDirection: UITextDirection(rawValue: 1))!
     let start       = self.offset(from: beginningOfDocument, to: textRange.start)
     let end         = self.offset(from: beginningOfDocument, to: textRange.end)
     

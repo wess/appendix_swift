@@ -18,7 +18,7 @@ public extension UIFont {
   public func size(of string: String, constrainedToWidth width: Double) -> CGSize {
     return (string as NSString).boundingRect(with: CGSize(width: width, height: DBL_MAX),
                                              options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                             attributes: [NSAttributedStringKey.font: self],
+                                             attributes: [NSAttributedString.Key.font: self],
                                              context: nil).size
   }
 }

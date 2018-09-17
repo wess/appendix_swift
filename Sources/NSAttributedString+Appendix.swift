@@ -14,7 +14,7 @@ public extension NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
     
-    copy.addAttributes([NSAttributedStringKey.font : UIFont.systemFontSize], range: range)
+    copy.addAttributes([NSAttributedString.Key.font : UIFont.systemFontSize], range: range)
     return copy
   }
 
@@ -22,7 +22,7 @@ public extension NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
 
-    copy.addAttributes([NSAttributedStringKey.font: NSUnderlineStyle.styleSingle.rawValue], range: range)
+    copy.addAttributes([NSAttributedString.Key.font: NSUnderlineStyle.single.rawValue], range: range)
     return copy
   }
 
@@ -30,14 +30,14 @@ public extension NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
 
-    copy.addAttributes([NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)], range: range)
+    copy.addAttributes([NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)], range: range)
     return copy
   }
 
   public var strikethrough: NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
-    let attributes  = [NSAttributedStringKey.strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int)]
+    let attributes  = [NSAttributedString.Key.strikethroughStyle: NSNumber(value: NSUnderlineStyle.single.rawValue as Int)]
 
     copy.addAttributes(attributes, range: range)
     return copy
@@ -49,7 +49,7 @@ public extension NSAttributedString {
     guard let copy  = mutableCopy() as? NSMutableAttributedString else { return self }
     let range       = NSMakeRange(0, string.length)
 
-    copy.addAttributes([NSAttributedStringKey.foregroundColor: color], range: range)
+    copy.addAttributes([NSAttributedString.Key.foregroundColor: color], range: range)
     return copy
   }
 }

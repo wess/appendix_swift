@@ -32,11 +32,11 @@ public extension UITableView {
     
     cell.contentView.addConstraint(constraint)
     
-    var size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+    var size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
     
     cell.removeConstraint(constraint)
     
-    if separatorStyle != UITableViewCellSeparatorStyle.none {
+    if separatorStyle != UITableViewCell.SeparatorStyle.none {
       size.height += 1 / UIScreen.main.scale
     }
     
