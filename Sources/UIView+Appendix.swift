@@ -319,6 +319,7 @@ extension UIView /* Animations */ {
       completion: completion
     )
   }
+
 }
 
 fileprivate class GestureRecognizerHandler {
