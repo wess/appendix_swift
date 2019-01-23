@@ -15,6 +15,7 @@ func RadiansFromDegrees(degrees:Float) -> Float {
 }
 
 public extension UIView {
+  /// Shortcut to the frame's origin.
   public var origin:CGPoint {
     get {
       return self.frame.origin
@@ -27,6 +28,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's size.
   public var size:CGSize {
     get {
       return self.frame.size
@@ -39,6 +41,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's width.
   public var width:CGFloat {
     get {
       return self.frame.width
@@ -54,6 +57,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's height.
   public var height:CGFloat {
     get {
       return self.frame.height
@@ -67,6 +71,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's top.
   public var top:CGFloat {
     get {
       return self.frame.top
@@ -82,6 +87,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's right.
   public var right:CGFloat {
     get {
       return left + width
@@ -97,6 +103,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's bottom.
   public var bottom:CGFloat {
     get {
       return top + height
@@ -112,6 +119,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the frame's left.
   public var left:CGFloat {
     get {
       return self.frame.minX
@@ -127,6 +135,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's corner radius.
   public var cornerRadius:CGFloat {
     get {
       return self.layer.cornerRadius
@@ -137,6 +146,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's border width.
   public var borderWidth:CGFloat {
     get {
       return self.layer.borderWidth
@@ -147,6 +157,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's border color.
   public var borderColor:UIColor {
     get {
       return UIColor(cgColor: self.layer.borderColor!)
@@ -158,6 +169,7 @@ public extension UIView {
     }
   }
 
+  /// Shortcut to the layer's shadow opacity.
   public var shadowOpacity:CGFloat {
     get {
       return CGFloat(self.layer.shadowOpacity)
@@ -168,6 +180,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's shadow color.
   public var shadowColor:UIColor? {
     get {
       return self.layer.shadowColor == nil ? UIColor(cgColor: self.layer.shadowColor!) : nil
@@ -178,6 +191,7 @@ public extension UIView {
     }
   }
 
+  /// Shortcut to the layer's shadow offset.
   public var shadowOffset:CGSize {
     get {
       return self.layer.shadowOffset
@@ -188,6 +202,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's shadow radius.
   public var shadowRadius:CGFloat {
     get {
       return self.layer.shadowRadius
@@ -198,6 +213,7 @@ public extension UIView {
     }
   }
   
+  /// Shortcut to the layer's shadow path.
   public var shadowPath:CGPath? {
     get {
       return self.layer.shadowPath
@@ -208,6 +224,7 @@ public extension UIView {
     }
   }
   
+  /// UIImage representation of the view.
   public var snapshot:UIImage {
     get {
       UIGraphicsBeginImageContextWithOptions(size, true, 0)
@@ -221,6 +238,7 @@ public extension UIView {
     }
   }
   
+  /// Set to make view background gradient.
   public var gradientBackgroundColors:[UIColor] {
     get { return [] }
     
@@ -233,18 +251,38 @@ public extension UIView {
     }
   }
   
+  /**
+   Animate the rotation of the view.
+   
+   - parameter degrees: Amount to rotate the view by.
+   - parameter duration: How long animation will run.
+   - parameter completion: Block called when the animation is complete.
+  */
   public func rotate(degrees:Float, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
     UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: { () -> Void in
       self.transform = self.transform.rotated(by: CGFloat(RadiansFromDegrees(degrees: degrees)))
     }, completion: completion)
   }
   
+  /**
+   Animate the scaling of the view.
+   
+   - parameter offset: Amount to scale the view by.
+   - parameter duration: How long animation will run.
+   - parameter completion: Block called when the animation is complete.
+   */
   public func scale(offset:CGPoint, duration:TimeInterval, completion:@escaping ((Bool) -> Void)) {
     UIView.animate(withDuration: duration, delay: 0, options: .curveLinear, animations: { () -> Void in
       self.transform = self.transform.scaledBy(x: offset.x, y: offset.y)
     }, completion: completion)
   }
   
+  /**
+   Add multiple views, as subviews.
+   
+   - parameter subviews: Array of views to add.
+   - returns: Current view instance.
+  */
   @discardableResult
   public func addSubviews(_ subviews:[UIView]) -> UIView {
     subviews.forEach(addSubview)
@@ -252,6 +290,12 @@ public extension UIView {
     return self
   }
 
+  /**
+   Add multiple views, as subviews.
+   
+   - parameter args: Comma separated list of views (as arguments) to add.
+   - returns: Current view instance.
+   */
   @discardableResult
   public func addSubviews(_ args:UIView...) -> UIView {
     args.forEach(addSubview)
@@ -259,6 +303,12 @@ public extension UIView {
     return self
   }
   
+  /**
+   Adds view instance, as a subview, to another view.
+   
+   - parameter to: View to add view instance to
+   - returns: Current view instance.
+  */
   @discardableResult
   public func add(to: UIView) -> UIView {
     to.addSubview(self)
@@ -266,6 +316,11 @@ public extension UIView {
     return self
   }
   
+  /**
+   Cycles layout, forcing call to `layout`.
+   
+   - returns: Current view instance.
+  */
   @discardableResult
   public func cycleLayout() -> UIView {
     self.setNeedsLayout()
@@ -274,6 +329,11 @@ public extension UIView {
     return self
   }
   
+  /**
+   Cycles constraints, forcing call to `updateConstraints`.
+   
+   - returns: Current view instance.
+  */
   @discardableResult
   public func cycleConstraints() -> UIView {
     self.setNeedsUpdateConstraints()
@@ -290,7 +350,14 @@ fileprivate struct UIViewAnimationDefaults {
 }
 
 extension UIView /* Animations */ {
-  public func shake(_ times:Int) {
+  /**
+   Animates shaking with view (left and right).
+   
+   - parameter times: Number of times view should shake.
+   - returns: Current view instance.
+  */
+  @discardableResult
+  public func shake(_ times:Int) -> UIView {
     let keyframe          = CAKeyframeAnimation(keyPath: "transform")
     keyframe.autoreverses = true
     keyframe.repeatCount  = Float(times)
@@ -302,13 +369,33 @@ extension UIView /* Animations */ {
     ]
     
     self.layer.add(keyframe, forKey: nil)
+    
+    return self
   }
   
-  public func spring(animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) {
-    spring(duration: UIViewAnimationDefaults.Duration, animations: animations, completion: completion)
+  /**
+   Animates springing with view.
+   
+   - parameter animations: Block used for changing properties of the view during animation.
+   - parameter completion: Block called when the animation is complete.
+   - returns: Current view instance.
+  */
+  @discardableResult
+  public func spring(animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) -> UIView {
+    return spring(duration: UIViewAnimationDefaults.Duration, animations: animations, completion: completion)
   }
   
-  public func spring(duration: TimeInterval, animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) {
+  
+  /**
+   Animates springing with view.
+   
+   - parameter duration: How long animation will run.
+   - parameter animations: Block used for changing properties of the view during animation.
+   - parameter completion: Block called when the animation is complete.
+   - returns: Current view instance.
+   */
+  @discardableResult
+  public func spring(duration: TimeInterval, animations: @escaping (() -> Void), completion: ((Bool) -> Void)? = nil) -> UIView {
     UIView.animate(
       withDuration:  UIViewAnimationDefaults.Duration,
       delay: 0,
@@ -318,19 +405,8 @@ extension UIView /* Animations */ {
       animations: animations,
       completion: completion
     )
+    
+    return self
   }
 
 }
-
-fileprivate class GestureRecognizerHandler {
-  
-}
-
-
-
-
-
-
-
-
-

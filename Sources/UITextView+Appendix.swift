@@ -9,8 +9,18 @@
 import Foundation
 import UIKit
 
+public enum UITextViewPosition {
+  case top
+  case bottom
+}
+
 public extension UITextView {
+  /// Number of lines text view contains.
+  public var lineCount:Int {
+    return Int(self.contentSize.height / self.font!.lineHeight)
+  }
   
+  /// Range of text that is currently visible in the text view.
   public var visibleTextRange:Range<Int> {
     let bounds:CGRect   = self.bounds
     let text            = self.text ?? ""
@@ -23,17 +33,53 @@ public extension UITextView {
     
     return startingPoint..<endingPoint
   }
-  
-  public func numberOfLines() -> Int {
-    return Int(self.contentSize.height / self.font!.lineHeight)
+
+  /**
+   Clear text.
+   
+   - returns: Current UITextView instance.
+  */
+  @discardableResult
+  public func clear() -> UITextView {
+    text            = ""
+    attributedText  = NSAttributedString(string: "")
+    
+    return self
   }
   
-  public func rangeOfTextAtPoint(of text:String, at point:CGPoint) -> NSRange {
-    let position    = self.closestPosition(to: point)
-    let textRange   = self.tokenizer.rangeEnclosingPosition(position!, with: .word, inDirection: UITextDirection(rawValue: 1))!
-    let start       = self.offset(from: beginningOfDocument, to: textRange.start)
-    let end         = self.offset(from: beginningOfDocument, to: textRange.end)
+  /**
+   Scrolls to the top or the bottom.
+   
+   - parameter position: Location to scroll to (top or bottom).
+   - returns: Current UITextView instance.
+  */
+  @discardableResult
+  public func scroll(to position:UITextViewPosition) -> UITextView {
+    let range:NSRange
     
-    return NSMakeRange(start, (end - start))
+    switch position {
+    case .top:
+      range = NSMakeRange(0, 1)
+    case .bottom:
+      range = NSMakeRange((self.text.count - 1), 1)
+    }
+    
+    return self
+  }
+  
+  /**
+   Resize text view to the size of the content contained.
+   
+   - returns: Current UITextView instance.
+  */
+  @discardableResult
+  public func sizeToContent() -> UITextView {
+    contentInset                      = .zero
+    scrollIndicatorInsets             = .zero
+    contentOffset                     = .zero
+    textContainerInset                = .zero
+    textContainer.lineFragmentPadding = 0
+    
+    return self
   }
 }

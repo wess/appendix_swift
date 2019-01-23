@@ -11,6 +11,14 @@ import Foundation
 import UIKit
 
 public extension UITableView {
+  
+  /**
+   Calculates the height for the current cell.
+   
+   - parameter identifier: Identifies the cell contained in the table.
+   - parameter handler: Block called for setting up current cell.
+   - returns: Calculated height of cell for content.
+  */
   public func heightForCell(identifier:String, handler:((_ cell:AnyObject) -> Void)!) -> Float {
     var identifiers = [String:UITableViewCell]()
     var cell:UITableViewCell
@@ -24,15 +32,25 @@ public extension UITableView {
       cell = identifiers[identifier]!
     }
     
+    handler(cell)
+    
     cell.contentView.bounds = CGRect(x: 0, y: 0, width: self.frame.width, height: self.rowHeight)
     
     cell.prepareForReuse()
     
-    let constraint  = NSLayoutConstraint(item: cell.contentView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.frame.width)
+    let constraint = NSLayoutConstraint(
+      item:       cell.contentView,
+      attribute:  .width,
+      relatedBy:  .equal,
+      toItem:     nil,
+      attribute:  .notAnAttribute,
+      multiplier: 1,
+      constant:   self.frame.width
+    )
     
     cell.contentView.addConstraint(constraint)
     
-    var size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+    var size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
     
     cell.removeConstraint(constraint)
     

@@ -107,11 +107,3 @@ public extension CGAffineTransform {
     return self.concatenating(transform)
   }
 }
-
-extension CGAffineTransform : CustomStringConvertible {
-  public var description:String { return NSCoder.string(for: self) }
-}
-
-
-
-
