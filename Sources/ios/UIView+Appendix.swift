@@ -14,6 +14,29 @@ func RadiansFromDegrees(degrees:Float) -> Float {
   return degrees * Float(M_PI) / 180
 }
 
+public enum UIViewCorner {
+  case topLeft
+  case topRight
+  case bottomLeft
+  case bottomRight
+
+  public static let all:[UIViewCorner] = [.topLeft, .topRight, .bottomLeft, .bottomRight]
+  
+  var mask:CACornerMask {
+    switch self {
+    case .topLeft:
+      return CACornerMask.layerMinXMinYCorner
+    case .topRight:
+      return CACornerMask.layerMinXMaxYCorner
+    case .bottomLeft:
+      return CACornerMask.layerMaxXMinYCorner
+    case .bottomRight:
+      return CACornerMask.layerMaxXMinYCorner
+    }
+  }
+}
+
+@available(iOS 11.0, *)
 public extension UIView {
   /// Shortcut to the frame's origin.
   public var origin:CGPoint {
@@ -142,7 +165,36 @@ public extension UIView {
     }
     
     set {
+      self.clipsToBounds      = newValue > 0
       self.layer.cornerRadius = newValue
+    }
+  }
+  
+  public var roundedCorners:[UIViewCorner] {
+    get {
+      var corners:[UIViewCorner] = []
+      
+      if layer.maskedCorners.contains(.layerMinXMinYCorner) {
+        corners.append(.topLeft)
+      }
+      
+      if layer.maskedCorners.contains(.layerMaxXMinYCorner) {
+        corners.append(.topRight)
+      }
+      
+      if layer.maskedCorners.contains(.layerMinXMaxYCorner) {
+        corners.append(.bottomLeft)
+      }
+
+      if layer.maskedCorners.contains(.layerMaxXMaxYCorner) {
+        corners.append(.bottomRight)
+      }
+
+      return corners
+    }
+    
+    set {
+      layer.maskedCorners = newValue.reduce(CACornerMask()) { CACornerMask(rawValue: $0.rawValue << $1.mask.rawValue) }
     }
   }
   
@@ -164,7 +216,6 @@ public extension UIView {
     }
     
     set {
-      
       self.layer.borderColor = (newValue as UIColor).cgColor
     }
   }

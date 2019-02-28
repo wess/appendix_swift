@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+import CoreGraphics
 
 extension CGSize {
   public init(_ size:CGFloat) {

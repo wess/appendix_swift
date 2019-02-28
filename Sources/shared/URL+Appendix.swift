@@ -9,6 +9,7 @@
 import Foundation
 
 extension URL {
+  
   /// URL Components
   public var components:URLComponents? {
     return URLComponents(string: self.absoluteString)
@@ -79,7 +80,7 @@ extension URL {
    - parameter queryString: String to append to the end of the url.
    - returns: Updated url with query string appended.
   */
-  public func append(_ queryString: String = "") -> URL? {
+  public func append(_ queryString: String) -> URL? {
     let urlString = absoluteString + "?\(queryString)"
     
     return URL(string: urlString)

@@ -19,7 +19,7 @@ public extension UITableView {
    - parameter handler: Block called for setting up current cell.
    - returns: Calculated height of cell for content.
   */
-  public func heightForCell(identifier:String, handler:((_ cell:AnyObject) -> Void)!) -> Float {
+  public func heightForCell(identifier:String, handler:((_ cell:AnyObject) -> Void)!) -> CGFloat {
     var identifiers = [String:UITableViewCell]()
     var cell:UITableViewCell
     
@@ -50,7 +50,7 @@ public extension UITableView {
     
     cell.contentView.addConstraint(constraint)
     
-    var size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+    var size = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
     
     cell.removeConstraint(constraint)
     
@@ -58,6 +58,6 @@ public extension UITableView {
       size.height += 1 / UIScreen.main.scale
     }
     
-    return Float(size.height)
+    return CGFloat(size.height)
   }
 }

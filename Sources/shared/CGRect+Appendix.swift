@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+import CoreGraphics
 
 public extension CGPoint {
   public init(_ x: CGFloat, _ y: CGFloat) {
